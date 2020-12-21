@@ -1,14 +1,18 @@
 import React from 'react';
-import { Flex, Heading } from '@chakra-ui/react';
+import { Flex, Heading, Grid } from '@chakra-ui/react';
 
-const Hero = ({ title }) => (
+const Hero = ({ title, subtitle }) => (
   <Flex justifyContent="center" alignItems="center" height="100vh">
-    <Heading fontSize="10vw">{title}</Heading>
+    <Grid templateRows="repeat(2, 1fr)" gap={2}>
+      <Heading fontSize="8vw">{title}</Heading>
+      <Heading fontSize="4vw">{subtitle}</Heading>
+    </Grid>
   </Flex>
 );
 
 Hero.defaultProps = {
-  title: 'with-chakra-ui'
+  title: 'gabriel hicks',
+  subtitle: 'software engineer'
 };
 
 export default Hero;
