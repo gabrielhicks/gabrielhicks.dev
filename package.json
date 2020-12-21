@@ -1,10 +1,28 @@
 {
-  "name": "with-chakra-ui",
+  "name": "next-portfolio",
   "version": "0.1.0",
+  "author": {
+    "name": "Gabriel Hicks",
+    "email": "gabrielhicks@mail.com",
+    "url": "https://gabrielhicks.dev"
+  },
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
+    "dev": "next",
+    "lint": "eslint . --ext .json --ext .js",
+    "prettier": "prettier --write \"**/*.{html,js,md,yml}\"",
     "start": "next start"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{html,js,md,yml}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.0",
@@ -12,9 +30,18 @@
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
     "framer-motion": "^2.9.4",
+    "globby": "^11.0.1",
     "next": "latest",
+    "next-seo": "^4.17.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.16.0",
+    "eslint-config-get-off-my-lawn": "^5.0.1",
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1"
+  }
 }

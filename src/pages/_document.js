@@ -1,18 +1,51 @@
-import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
-import { ColorModeScript } from '@chakra-ui/react'
+import React from 'react';
+import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
+import { ColorModeScript } from '@chakra-ui/react';
 
 export default class Document extends NextDocument {
   render() {
     return (
-      <Html>
-        <Head />
+      <Html lang="en">
+        <Head>
+          <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
+          <meta name="msapplication-TileColor" content="#ffc40d" />
+          <meta name="theme-color" content="#ffffff" />
+          {/* <meta content="5e41b2275db646a5" name="yandex-verification" />
+          <meta
+            content="t28Kl2fGmZjIEgh6q3mGsf-7gGb8115VMQm1qbMMIKc"
+            name="google-site-verification"
+          /> */}
+          <link href="/favicons/favicon.ico" rel="shortcut icon" />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/favicons/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicons/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+          />
+          <link rel="manifest" href="/favicons/site.webmanifest" />
+          <link
+            rel="mask-icon"
+            href="/favicons/safari-pinned-tab.svg"
+            color="#b1b62b"
+          />
+        </Head>
         <body>
-          {/* Make Color mode to persists when you refresh the page. */}
           <ColorModeScript />
           <Main />
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
