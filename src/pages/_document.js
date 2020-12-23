@@ -10,11 +10,10 @@ export default class Document extends NextDocument {
           <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
           <meta name="msapplication-TileColor" content="#ffc40d" />
           <meta name="theme-color" content="#ffffff" />
-          {/* <meta content="YANDEXSITEVERIFICATIONCONTENT" name="yandex-verification" />
           <meta
-            content="GOOGLEMETASITEVERIFICATIONCONTENT"
+            content="Pp_AlJMcynTuCnFnUOlynldmgPukRP_AY5lxl6N1qPM"
             name="google-site-verification"
-          /> */}
+          />
           <link href="/favicons/favicon.ico" rel="shortcut icon" />
           <link
             rel="apple-touch-icon"
