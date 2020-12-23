@@ -1,14 +1,6 @@
 import React from 'react';
-import { Stack } from '@chakra-ui/react';
+import { SimpleGrid } from '@chakra-ui/react';
 
 export const Main = (props) => (
-  <Stack
-    spacing="1.5rem"
-    width="100%"
-    maxWidth="48rem"
-    mt="-45vh"
-    pt="8rem"
-    px="1rem"
-    {...props}
-  />
+  <SimpleGrid columns={[1, 2, 3]} spacing={2} {...props} />
 );
