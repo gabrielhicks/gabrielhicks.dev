@@ -94,7 +94,7 @@ export const Project = ({ project }) => {
           <Box d="flex-end" pb="2" alignItems="baseline">
             {project.tech.map((each) => (
               <Badge
-                key={project.id}
+                key={each}
                 borderRadius="full"
                 px="2"
                 mr="2px"
