@@ -10,10 +10,6 @@ import {
 import { Airplayvideo, Youtube, Github } from '@icons-pack/react-simple-icons';
 
 export const Project = ({ project }) => {
-  const property = {
-    imageAlt: 'Rear view of modern home with pool'
-  };
-
   return (
     <>
       <Box
@@ -24,7 +20,7 @@ export const Project = ({ project }) => {
         borderRadius="md"
         overflow="hidden"
       >
-        <Image width="sm" src={project.image2} alt={property.imageAlt} />
+        <Image width="sm" src={project.image2} alt={project.name} />
         <Box
           d="flex"
           my="2"
