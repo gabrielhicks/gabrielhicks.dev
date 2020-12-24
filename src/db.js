@@ -176,7 +176,7 @@ export const projects = [
     back: '',
     description: 'The first iteration of my personal portfolio',
     tech: ['React', 'Redux', 'HTML', 'CSS', 'styled-components'],
-    click: 'https://www.gabrielhicks.dev/',
-    url: 'https://www.gabrielhicks.dev/'
+    click: 'https://gabrielhicks.netlify.app',
+    url: 'https://gabrielhicks.netlify.app'
   }
 ];

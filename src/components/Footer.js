@@ -6,7 +6,7 @@ import {
   Medium,
   Linkedin
 } from '@icons-pack/react-simple-icons';
-import { Flex, Link, HStack, Text } from '@chakra-ui/react';
+import { Flex, Link, HStack } from '@chakra-ui/react';
 
 export const Footer = (props) => (
   <>
