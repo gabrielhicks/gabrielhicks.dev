@@ -32,28 +32,34 @@ export const Project = ({ project }) => {
           alignItems="center"
           justifyContent="space-evenly"
         >
-          <Button
-            colorScheme="gray"
-            leftIcon={<Youtube />}
-            component={Link}
-            as="a"
-            target="_blank"
-            rel="noreferrer"
-            href={project.videoUrl}
-          >
-            Video
-          </Button>
-          <Button
-            colorScheme="gray"
-            leftIcon={<Airplayvideo />}
-            component={Link}
-            as="a"
-            target="_blank"
-            rel="noreferrer"
-            href={project.url}
-          >
-            Live
-          </Button>
+          {project.videoUrl !== '' ? (
+            <Button
+              colorScheme="gray"
+              leftIcon={<Youtube />}
+              component={Link}
+              as="a"
+              target="_blank"
+              rel="noreferrer"
+              href={project.videoUrl}
+            >
+              Video
+            </Button>
+          ) : null}
+
+          {project.url !== '' ? (
+            <Button
+              colorScheme="gray"
+              leftIcon={<Airplayvideo />}
+              component={Link}
+              as="a"
+              target="_blank"
+              rel="noreferrer"
+              href={project.url}
+            >
+              Live
+            </Button>
+          ) : null}
+
           {project.front !== '' ? (
             <Button
               colorScheme="gray"
@@ -67,6 +73,7 @@ export const Project = ({ project }) => {
               Front
             </Button>
           ) : null}
+
           {project.back !== '' ? (
             <Button
               colorScheme="gray"
