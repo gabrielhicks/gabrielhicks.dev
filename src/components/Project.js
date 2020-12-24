@@ -4,8 +4,10 @@ import {
   Image,
   Badge,
   Button,
-  ChakraLink as Link
+  ChakraLink as Link,
+  Divider
 } from '@chakra-ui/react';
+import { Airplayvideo, Youtube, Github } from '@icons-pack/react-simple-icons';
 
 export const Project = ({ project }) => {
   const property = {
@@ -23,33 +25,6 @@ export const Project = ({ project }) => {
         overflow="hidden"
       >
         <Image width="sm" src={project.image2} alt={property.imageAlt} />
-
-        <Box p="6">
-          <Box d="" alignItems="baseline">
-            {project.tech.map((each) => (
-              <Badge
-                key={project.id}
-                borderRadius="full"
-                px="2"
-                colorScheme="teal"
-              >
-                {each}
-              </Badge>
-            ))}
-          </Box>
-
-          <Box
-            mt="1"
-            fontWeight="semibold"
-            as="h4"
-            lineHeight="tight"
-            isTruncated
-          >
-            {project.name}
-          </Box>
-
-          <Box>{project.description}</Box>
-        </Box>
         <Box
           d="flex"
           my="2"
@@ -58,15 +33,8 @@ export const Project = ({ project }) => {
           justifyContent="space-evenly"
         >
           <Button
-            component={Link}
-            as="a"
-            target="_blank"
-            rel="noreferrer"
-            href={project.url}
-          >
-            Live
-          </Button>
-          <Button
+            colorScheme="gray"
+            leftIcon={<Youtube />}
             component={Link}
             as="a"
             target="_blank"
@@ -76,23 +44,66 @@ export const Project = ({ project }) => {
             Video
           </Button>
           <Button
+            colorScheme="gray"
+            leftIcon={<Airplayvideo />}
             component={Link}
             as="a"
             target="_blank"
             rel="noreferrer"
-            href={project.front}
+            href={project.url}
           >
-            Frontend
+            Live
           </Button>
-          <Button
-            component={Link}
-            as="a"
-            target="_blank"
-            rel="noreferrer"
-            href={project.back}
-          >
-            Backend
-          </Button>
+          {project.front !== '' ? (
+            <Button
+              colorScheme="gray"
+              leftIcon={<Github />}
+              component={Link}
+              as="a"
+              target="_blank"
+              rel="noreferrer"
+              href={project.front}
+            >
+              Front
+            </Button>
+          ) : null}
+          {project.back !== '' ? (
+            <Button
+              colorScheme="gray"
+              leftIcon={<Github />}
+              component={Link}
+              as="a"
+              target="_blank"
+              rel="noreferrer"
+              href={project.back}
+            >
+              Back
+            </Button>
+          ) : null}
+        </Box>
+
+        <Box p="6" pt="0">
+          <Box pt="0" fontWeight="bold" as="h3" lineHeight="tight">
+            {project.name}
+            <Divider orientation="horizontal" />
+          </Box>
+
+          <Box d="flex-end" pb="2" alignItems="baseline">
+            {project.tech.map((each) => (
+              <Badge
+                key={project.id}
+                borderRadius="full"
+                px="2"
+                mr="2px"
+                fontSize="0.6em"
+                colorScheme="green"
+              >
+                {each}
+              </Badge>
+            ))}
+          </Box>
+
+          <Box>{project.description}</Box>
         </Box>
       </Box>
     </>

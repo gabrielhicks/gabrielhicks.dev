@@ -85,7 +85,7 @@ export const projects = [
     description:
       'Ruby on Rails application that allows a user to search for their favorite videos online',
     tech: [
-      'Ruby on Rails',
+      'Rails',
       'CSS',
       'jQuery',
       'Bootstrap',
@@ -105,7 +105,7 @@ export const projects = [
     front: '',
     back: 'https://github.com/gabrielhicks/literallyjustvibing',
     description:
-      'A Ruby CLI application that generates playlists based off mood via Spotify API',
+      'A Ruby CLI application that generates playlists based off a users mood via Spotify API and data analysis by Michael Nuzzolo',
     tech: ['Ruby', 'Spotify API'],
     click: 'https://github.com/gabrielhicks/literallyjustvibing',
     url: 'https://github.com/gabrielhicks/literallyjustvibing'
@@ -133,7 +133,7 @@ export const projects = [
     front: 'https://github.com/Rahat-ch/The_Sylar_Project',
     back: '',
     description:
-      'A NextJS Open Source project that helps people locate mental health resources locally.',
+      'A NextJS Open Source project with the goal to help people locate mental health resources quickly in their local area.',
     tech: ['NextJS', 'React', 'Node', 'HTML', 'CSS'],
     click: 'https://the-sylar-project-6avzk.ondigitalocean.app/',
     url: 'https://the-sylar-project-6avzk.ondigitalocean.app/'
@@ -146,7 +146,8 @@ export const projects = [
     videoUrl: '',
     front: 'https://github.com/gabrielhicks/flask-online-store',
     back: '',
-    description: 'E commerce store management and order placing system API',
+    description:
+      'A Python / Flask e-commerce store management and order placing system.',
     tech: ['Python', 'SQLAlchemy', 'Flask', 'Github OAuth'],
     click: 'https://github.com/gabrielhicks/flask-online-store',
     url: 'https://github.com/gabrielhicks/flask-online-store'
@@ -173,8 +174,8 @@ export const projects = [
     videoUrl: '',
     front: 'https://github.com/gabrielhicks/portfolio',
     back: '',
-    description: "Gabriel Hicks' Personal Website",
-    tech: ['React', 'HTML', 'CSS', 'styled-components'],
+    description: 'The first iteration of my personal portfolio',
+    tech: ['React', 'Redux', 'HTML', 'CSS', 'styled-components'],
     click: 'https://www.gabrielhicks.dev/',
     url: 'https://www.gabrielhicks.dev/'
   }

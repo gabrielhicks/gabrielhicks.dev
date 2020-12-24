@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text } from '@chakra-ui/react';
 
 import { projects } from '../db';
 import Hero from '../components/Hero';
@@ -21,9 +20,7 @@ const Index = () => (
     </Main>
 
     <DarkModeSwitch />
-    <Footer>
-      <Text>Next ❤ Chakra</Text>
-    </Footer>
+    <Footer />
   </Container>
 );
 
