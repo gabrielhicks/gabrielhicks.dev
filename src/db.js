@@ -107,8 +107,8 @@ export const projects = [
     description:
       'A Ruby CLI application that generates playlists based off a users mood via Spotify API and data analysis by Michael Nuzzolo',
     tech: ['Ruby', 'Spotify API'],
-    click: 'https://github.com/gabrielhicks/literallyjustvibing',
-    url: 'https://github.com/gabrielhicks/literallyjustvibing'
+    click: '',
+    url: ''
   },
   {
     id: 6,
@@ -150,7 +150,7 @@ export const projects = [
       'A Python / Flask e-commerce store management and order placing system.',
     tech: ['Python', 'SQLAlchemy', 'Flask', 'Github OAuth'],
     click: 'https://github.com/gabrielhicks/flask-online-store',
-    url: 'https://github.com/gabrielhicks/flask-online-store'
+    url: ''
   },
   {
     id: 9,

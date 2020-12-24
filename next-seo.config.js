@@ -1,6 +1,6 @@
-const title = 'Gabriel Hicks';
+const title = 'Gabriel Hicks - Software Engineer, Web Developer';
 const description =
-  'A portfolio of software engineering projects developed by Gabriel Hicks';
+  'Gabriel Hicks is a software engineer who specializes in building applications and websites using the latest technologies.';
 
 const SEO = {
   title,
