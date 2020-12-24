@@ -1,15 +1,15 @@
 import React from 'react';
-import { Box, Image, Badge } from '@chakra-ui/react';
+import {
+  Box,
+  Image,
+  Badge,
+  Button,
+  ChakraLink as Link
+} from '@chakra-ui/react';
 
-export const Project = () => {
+export const Project = ({ project }) => {
   const property = {
-    imageUrl: 'https://bit.ly/2Z4KKcF',
-    imageAlt: 'Rear view of modern home with pool',
-    beds: 3,
-    baths: 2,
-    title: 'Modern home in city center in the heart of historic Los Angeles',
-    formattedPrice: '$1,900.00',
-    reviewCount: 34
+    imageAlt: 'Rear view of modern home with pool'
   };
 
   return (
@@ -22,23 +22,20 @@ export const Project = () => {
         borderRadius="md"
         overflow="hidden"
       >
-        <Image src={property.imageUrl} alt={property.imageAlt} />
+        <Image width="sm" src={project.image2} alt={property.imageAlt} />
 
         <Box p="6">
-          <Box d="flex" alignItems="baseline">
-            <Badge borderRadius="full" px="2" colorScheme="teal">
-              New
-            </Badge>
-            <Box
-              color="gray.500"
-              fontWeight="semibold"
-              letterSpacing="wide"
-              fontSize="xs"
-              textTransform="uppercase"
-              ml="2"
-            >
-              {property.beds} beds &bull; {property.baths} baths
-            </Box>
+          <Box d="" alignItems="baseline">
+            {project.tech.map((each) => (
+              <Badge
+                key={project.id}
+                borderRadius="full"
+                px="2"
+                colorScheme="teal"
+              >
+                {each}
+              </Badge>
+            ))}
           </Box>
 
           <Box
@@ -48,21 +45,54 @@ export const Project = () => {
             lineHeight="tight"
             isTruncated
           >
-            {property.title}
+            {project.name}
           </Box>
 
-          <Box>
-            {property.formattedPrice}
-            <Box as="span" color="gray.600" fontSize="sm">
-              / wk
-            </Box>
-          </Box>
-
-          <Box d="flex" mt="2" alignItems="center">
-            <Box as="span" ml="2" color="gray.600" fontSize="sm">
-              {property.reviewCount} reviews
-            </Box>
-          </Box>
+          <Box>{project.description}</Box>
+        </Box>
+        <Box
+          d="flex"
+          my="2"
+          mx="2"
+          alignItems="center"
+          justifyContent="space-evenly"
+        >
+          <Button
+            component={Link}
+            as="a"
+            target="_blank"
+            rel="noreferrer"
+            href={project.url}
+          >
+            Live
+          </Button>
+          <Button
+            component={Link}
+            as="a"
+            target="_blank"
+            rel="noreferrer"
+            href={project.videoUrl}
+          >
+            Video
+          </Button>
+          <Button
+            component={Link}
+            as="a"
+            target="_blank"
+            rel="noreferrer"
+            href={project.front}
+          >
+            Frontend
+          </Button>
+          <Button
+            component={Link}
+            as="a"
+            target="_blank"
+            rel="noreferrer"
+            href={project.back}
+          >
+            Backend
+          </Button>
         </Box>
       </Box>
     </>
