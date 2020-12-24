@@ -9,7 +9,17 @@ import {
 } from '@chakra-ui/react';
 import { Airplayvideo, Youtube, Github } from '@icons-pack/react-simple-icons';
 
-export const Project = ({ project }) => {
+export const Project = ({
+  image,
+  title,
+  video,
+  frontend,
+  backend,
+  repo,
+  tech,
+  description,
+  website
+}) => {
   return (
     <>
       <Box
@@ -20,7 +30,7 @@ export const Project = ({ project }) => {
         borderRadius="md"
         overflow="hidden"
       >
-        <Image width="sm" src={project.image2} alt={project.name} />
+        <Image width="sm" src={image} alt={title} />
         <Box
           d="flex"
           my="2"
@@ -28,7 +38,7 @@ export const Project = ({ project }) => {
           alignItems="center"
           justifyContent="space-evenly"
         >
-          {project.videoUrl !== '' ? (
+          {video ? (
             <Button
               colorScheme="gray"
               leftIcon={<Youtube />}
@@ -36,13 +46,13 @@ export const Project = ({ project }) => {
               as="a"
               target="_blank"
               rel="noreferrer"
-              href={project.videoUrl}
+              href={video}
             >
               Video
             </Button>
           ) : null}
 
-          {project.url !== '' ? (
+          {website ? (
             <Button
               colorScheme="gray"
               leftIcon={<Airplayvideo />}
@@ -50,13 +60,13 @@ export const Project = ({ project }) => {
               as="a"
               target="_blank"
               rel="noreferrer"
-              href={project.url}
+              href={website}
             >
               Live
             </Button>
           ) : null}
 
-          {project.front !== '' ? (
+          {frontend ? (
             <Button
               colorScheme="gray"
               leftIcon={<Github />}
@@ -64,13 +74,13 @@ export const Project = ({ project }) => {
               as="a"
               target="_blank"
               rel="noreferrer"
-              href={project.front}
+              href={frontend}
             >
               Front
             </Button>
           ) : null}
 
-          {project.back !== '' ? (
+          {backend ? (
             <Button
               colorScheme="gray"
               leftIcon={<Github />}
@@ -78,21 +88,35 @@ export const Project = ({ project }) => {
               as="a"
               target="_blank"
               rel="noreferrer"
-              href={project.back}
+              href={backend}
             >
               Back
+            </Button>
+          ) : null}
+
+          {repo ? (
+            <Button
+              colorScheme="gray"
+              leftIcon={<Github />}
+              component={Link}
+              as="a"
+              target="_blank"
+              rel="noreferrer"
+              href={repo}
+            >
+              Repo
             </Button>
           ) : null}
         </Box>
 
         <Box p="6" pt="0">
           <Box pt="0" fontWeight="bold" as="h3" lineHeight="tight">
-            {project.name}
+            {title}
             <Divider orientation="horizontal" />
           </Box>
 
           <Box d="flex-end" pb="2" alignItems="baseline">
-            {project.tech.map((each) => (
+            {tech.map((each) => (
               <Badge
                 key={each}
                 borderRadius="full"
@@ -106,7 +130,7 @@ export const Project = ({ project }) => {
             ))}
           </Box>
 
-          <Box>{project.description}</Box>
+          <Box>{description}</Box>
         </Box>
       </Box>
     </>
