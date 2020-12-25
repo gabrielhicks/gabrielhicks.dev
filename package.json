@@ -34,6 +34,7 @@
     "globby": "^11.0.1",
     "next": "latest",
     "next-seo": "^4.17.0",
+    "preact": "^10.5.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-hook-form": "^6.13.1"
