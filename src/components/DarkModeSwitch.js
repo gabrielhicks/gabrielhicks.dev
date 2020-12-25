@@ -14,23 +14,14 @@ export const DarkModeSwitch = () => {
 
   return (
     <>
-      {/* <Switch
-        position="fixed"
-        top="1.5rem"
-        right="1rem"
-        colorScheme="green"
-        isChecked={isDark}
-        onChange={toggleColorMode}
-      /> */}
       {isDark ? (
         <IconButton
           position="fixed"
           variant="ghost"
           top="1rem"
           right="1rem"
-          // colorScheme="green"
           onClick={toggleColorMode}
-          aria-label="Search database"
+          aria-label="Change page theme"
           icon={<SunIcon />}
         />
       ) : (
@@ -39,9 +30,8 @@ export const DarkModeSwitch = () => {
           top="1rem"
           variant="ghost"
           right="1rem"
-          // colorScheme="green"
           onClick={toggleColorMode}
-          aria-label="Search database"
+          aria-label="Change page theme"
           icon={<MoonIcon />}
         />
       )}
