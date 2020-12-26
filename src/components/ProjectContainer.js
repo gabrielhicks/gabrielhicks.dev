@@ -95,7 +95,7 @@ export const ProjectContainer = () => (
     />
 
     <Project
-      title="Spicy Green Book"
+      title="Spicy Green Book (contributed)"
       image="https://i.ibb.co/HPRF1b8/spicecol.webp"
       repo="https://github.com/spicygreenbook/greenbook-app"
       description="Open Source Contribution - A directory of local black-owned businesses that users can find to support"
@@ -104,7 +104,7 @@ export const ProjectContainer = () => (
     />
 
     <Project
-      title="The Sylar Project"
+      title="The Sylar Project (contributed)"
       image="https://i.ibb.co/Kbk5Z3Y/thesylarproject.webp"
       repo="https://github.com/Rahat-ch/The_Sylar_Project"
       description="A NextJS Open Source project with the goal to help people locate mental health resources quickly in their local area."
@@ -113,7 +113,7 @@ export const ProjectContainer = () => (
     />
 
     <Project
-      title="Flask Store"
+      title="Flask Store (contributed)"
       image="https://i.ibb.co/PNMYgzM/hacktoberfest.webp"
       repo="https://github.com/gabrielhicks/flask-online-store"
       description="A Python / Flask e-commerce store management and order placing system."
@@ -122,7 +122,7 @@ export const ProjectContainer = () => (
     />
 
     <Project
-      title="Alt-Text"
+      title="O-FISH (contributed)"
       image="https://i.ibb.co/PNMYgzM/hacktoberfest.webp"
       repo="https://github.com/gabrielhicks/wildaid.github.io"
       description="O-FISH is a multi-platform application that enables officers to browse and record boarding report data from their mobile devices"
