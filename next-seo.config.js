@@ -1,4 +1,4 @@
-const title = 'Gabriel Hicks - Software Engineer, Web Developer';
+const title = 'Gabriel Hicks | Software Engineer, Web Developer';
 const description =
   'Gabriel Hicks is a software engineer who specializes in building applications and websites using the latest technologies.';
 
