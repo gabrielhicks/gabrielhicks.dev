@@ -98,8 +98,8 @@ export const ProjectContainer = () => (
       title="Spicy Green Book (contributed)"
       image="https://i.ibb.co/HPRF1b8/spicecol.webp"
       repo="https://github.com/spicygreenbook/greenbook-app"
-      description="Open Source Contribution - A directory of local black-owned businesses that users can find to support"
-      tech={['React', 'React Native', 'HTML', 'CSS']}
+      description="An open source directory of local black-owned businesses that users can find to support"
+      tech={['React', 'React Native', 'HTML', 'CSS', 'Open Source']}
       website="https://spicygreenbook.org/"
     />
 
@@ -107,8 +107,8 @@ export const ProjectContainer = () => (
       title="The Sylar Project (contributed)"
       image="https://i.ibb.co/Kbk5Z3Y/thesylarproject.webp"
       repo="https://github.com/Rahat-ch/The_Sylar_Project"
-      description="A NextJS Open Source project with the goal to help people locate mental health resources quickly in their local area."
-      tech={['NextJS', 'React', 'Node', 'HTML', 'CSS']}
+      description="A NextJS open source project with the goal to help people locate mental health resources quickly in their local area."
+      tech={['NextJS', 'React', 'Node', 'HTML', 'CSS', 'Open Source']}
       website="https://the-sylar-project-6avzk.ondigitalocean.app/"
     />
 
@@ -116,8 +116,8 @@ export const ProjectContainer = () => (
       title="Flask Store (contributed)"
       image="https://i.ibb.co/PNMYgzM/hacktoberfest.webp"
       repo="https://github.com/gabrielhicks/flask-online-store"
-      description="A Python / Flask e-commerce store management and order placing system."
-      tech={['Python', 'SQLAlchemy', 'Flask', 'Github OAuth']}
+      description="A Python / Flask open source e-commerce store management and order placing system created for Hacktoberfest"
+      tech={['Python', 'SQLAlchemy', 'Flask', 'OAuth', 'Open Source']}
       website="https://github.com/gabrielhicks/flask-online-store"
     />
 
@@ -125,8 +125,8 @@ export const ProjectContainer = () => (
       title="O-FISH (contributed)"
       image="https://i.ibb.co/PNMYgzM/hacktoberfest.webp"
       repo="https://github.com/gabrielhicks/wildaid.github.io"
-      description="O-FISH is a multi-platform application that enables officers to browse and record boarding report data from their mobile devices"
-      tech={['HTML']}
+      description="O-FISH is an open source multi-platform application that enables officers to browse and record boarding report data from their mobile devices"
+      tech={['HTML', 'Open Source']}
       website="https://wildaid.github.io/"
     />
 
