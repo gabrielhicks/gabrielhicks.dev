@@ -8,10 +8,10 @@ const getDate = new Date().toISOString();
 (async () => {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js');
   const pages = await globby([
-    'pages/**/*.js',
-    'pages/*.js',
-    '!pages/api',
-    '!pages/_*.js'
+    '../src/pages/**/*.js',
+    '../src/pages/*.js',
+    '!../src/pages/api',
+    '!../src/pages/_*.js'
   ]);
   const sitemap = `
             ${pages
