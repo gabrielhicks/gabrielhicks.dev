@@ -1,7 +1,7 @@
 import React from 'react';
+import Image from 'next/image';
 import {
   Box,
-  Image,
   Badge,
   Button,
   ChakraLink as Link,
@@ -30,7 +30,7 @@ export const Project = ({
         borderRadius="md"
         overflow="hidden"
       >
-        <Image width="sm" src={image} alt={title} />
+        <Image width={3360} height={1864} src={image} alt={title} />
         <Box
           d="flex"
           my="2"

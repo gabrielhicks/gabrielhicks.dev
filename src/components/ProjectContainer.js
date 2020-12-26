@@ -5,7 +5,7 @@ import { Project } from './Project';
 export const ProjectContainer = () => (
   <>
     <Project
-      image="https://i.ibb.co/2P838j6/thcol.webp"
+      image="/tutorialheaven.png"
       website="https://tutorial-heaven.netlify.app/"
       title="Tutorial Heaven"
       video="https://youtu.be/H87iCP8XYHU"
@@ -28,7 +28,7 @@ export const ProjectContainer = () => (
     />
 
     <Project
-      image="https://i.ibb.co/p2xRs3c/rplantscol.webp"
+      image="/rplants.png"
       website="https://rplants.netlify.app/"
       title="rPlants"
       video="https://youtu.be/U8aKwmJFAq4"
@@ -51,7 +51,7 @@ export const ProjectContainer = () => (
     />
     <Project
       title="Synthwave"
-      image="https://i.ibb.co/Jm4bFgd/synthcol.webp"
+      image="/synthwave.png"
       website="https://synthwavejs.herokuapp.com/"
       video="https://youtu.be/HsbjB8s-tSU"
       frontend="https://github.com/gabrielhicks/synthwave-frontend"
@@ -71,7 +71,7 @@ export const ProjectContainer = () => (
 
     <Project
       title="YouPlay"
-      image="https://i.ibb.co/nCpYHGH/youplaycol.webp"
+      image="/youplay.png"
       video="https://youtu.be/w7D92edjc4I"
       repo="https://github.com/gabrielhicks/YouPlay_postgreSQL"
       description="Ruby on Rails application that allows a user to search for their favorite videos online"
@@ -88,7 +88,7 @@ export const ProjectContainer = () => (
     />
     <Project
       title="Literally Just Vibing"
-      image="https://i.ibb.co/982482L/litcol.webp"
+      image="/vibing.png"
       repo="https://github.com/gabrielhicks/literallyjustvibing"
       description="A Ruby CLI application that generates playlists based off a users mood via Spotify API and data analysis by Michael Nuzzolo"
       tech={['Ruby', 'Spotify API']}
@@ -96,7 +96,7 @@ export const ProjectContainer = () => (
 
     <Project
       title="Spicy Green Book (contributed)"
-      image="https://i.ibb.co/HPRF1b8/spicecol.webp"
+      image="/sgb.png"
       repo="https://github.com/spicygreenbook/greenbook-app"
       description="An open source directory of local black-owned businesses that users can find to support"
       tech={['React', 'React Native', 'HTML', 'CSS', 'Open Source']}
@@ -105,7 +105,7 @@ export const ProjectContainer = () => (
 
     <Project
       title="The Sylar Project (contributed)"
-      image="https://i.ibb.co/Kbk5Z3Y/thesylarproject.webp"
+      image="/sylar.png"
       repo="https://github.com/Rahat-ch/The_Sylar_Project"
       description="A NextJS open source project with the goal to help people locate mental health resources quickly in their local area."
       tech={['NextJS', 'React', 'Node', 'HTML', 'CSS', 'Open Source']}
@@ -114,7 +114,7 @@ export const ProjectContainer = () => (
 
     <Project
       title="Flask Store (contributed)"
-      image="https://i.ibb.co/PNMYgzM/hacktoberfest.webp"
+      image="/hacktober.png"
       repo="https://github.com/gabrielhicks/flask-online-store"
       description="A Python / Flask open source e-commerce store management and order placing system created for Hacktoberfest"
       tech={['Python', 'SQLAlchemy', 'Flask', 'OAuth', 'Open Source']}
@@ -123,7 +123,7 @@ export const ProjectContainer = () => (
 
     <Project
       title="O-FISH (contributed)"
-      image="https://i.ibb.co/PNMYgzM/hacktoberfest.webp"
+      image="/hacktober.png"
       repo="https://github.com/gabrielhicks/wildaid.github.io"
       description="O-FISH is an open source multi-platform application that enables officers to browse and record boarding report data from their mobile devices"
       tech={['HTML', 'Open Source']}
@@ -132,7 +132,7 @@ export const ProjectContainer = () => (
 
     <Project
       title="Personal Portfolio"
-      image="https://i.ibb.co/HP6KzDv/portfoliov1.webp"
+      image="/portfoliov1.png"
       repo="https://github.com/gabrielhicks/portfolio"
       description="The first iteration of my personal portfolio"
       tech={['React', 'Redux', 'HTML', 'CSS', 'styled-components']}
