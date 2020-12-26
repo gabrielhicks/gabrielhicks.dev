@@ -14,7 +14,7 @@ const SEO = {
     description,
     images: [
       {
-        url: 'https://gabrielhicks.dev/logo.png',
+        url: 'https://gabrielhicks.dev/og.png',
         alt: title,
         width: 2048,
         height: 2048
