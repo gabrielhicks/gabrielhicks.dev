@@ -48,6 +48,7 @@ export const DarkModeSwitch = () => {
           colorScheme="green"
           component={Link}
           as="a"
+          alt="Opens in a new window"
           target="_blank"
           rel="noreferrer"
           href={'https://pdfhost.io/v/6MxCSbMTj_HicksResume2020_LaTeXpdf.pdf'}
@@ -59,6 +60,7 @@ export const DarkModeSwitch = () => {
           colorScheme="green"
           component={Link}
           as="a"
+          alt="Opens in a new window"
           target="_blank"
           rel="noreferrer"
           href={'https://www.linkedin.com/in/gabrieljhicks/'}
@@ -70,6 +72,7 @@ export const DarkModeSwitch = () => {
           colorScheme="green"
           component={Link}
           as="a"
+          alt="Opens in a new window"
           target="_blank"
           rel="noreferrer"
           href={'https://github.com/gabrielhicks/'}

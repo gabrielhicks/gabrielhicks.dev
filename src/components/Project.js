@@ -4,8 +4,8 @@ import {
   Box,
   Badge,
   Button,
-  ChakraLink as Link,
-  Divider
+  Divider,
+  ChakraLink as Link
 } from '@chakra-ui/react';
 import { Airplayvideo, Youtube, Github } from '@icons-pack/react-simple-icons';
 
@@ -41,6 +41,7 @@ export const Project = ({
           {video ? (
             <Button
               colorScheme="gray"
+              alt="Opens in a new window"
               leftIcon={<Youtube />}
               component={Link}
               as="a"
@@ -55,6 +56,7 @@ export const Project = ({
           {website ? (
             <Button
               colorScheme="gray"
+              alt="Opens in a new window"
               leftIcon={<Airplayvideo />}
               component={Link}
               as="a"
@@ -69,6 +71,7 @@ export const Project = ({
           {frontend ? (
             <Button
               colorScheme="gray"
+              alt="Opens in a new window"
               leftIcon={<Github />}
               component={Link}
               as="a"
@@ -83,6 +86,7 @@ export const Project = ({
           {backend ? (
             <Button
               colorScheme="gray"
+              alt="Opens in a new window"
               leftIcon={<Github />}
               component={Link}
               as="a"
@@ -97,6 +101,7 @@ export const Project = ({
           {repo ? (
             <Button
               colorScheme="gray"
+              alt="Opens in a new window"
               leftIcon={<Github />}
               component={Link}
               as="a"
@@ -112,7 +117,7 @@ export const Project = ({
         <Box p="6" pt="0">
           <Box pt="0" fontWeight="bold" as="h3" lineHeight="tight">
             {title}
-            <Divider orientation="horizontal" />
+            <Divider role="separator" orientation="horizontal" />
           </Box>
 
           <Box d="flex-end" pb="2" alignItems="baseline">
