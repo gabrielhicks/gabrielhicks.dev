@@ -51,7 +51,7 @@ export const DarkModeSwitch = () => {
           alt="Opens in a new window"
           target="_blank"
           rel="noreferrer"
-          href={'https://pdfhost.io/v/6MxCSbMTj_HicksResume2020_LaTeXpdf.pdf'}
+          href={'https://gabrielhicks.dev/HicksResume.pdf'}
         >
           Resume
         </Button>
