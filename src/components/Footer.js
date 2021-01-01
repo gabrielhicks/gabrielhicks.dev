@@ -32,8 +32,8 @@ export const Footer = (props) => (
         </Link>
       </HStack>
     </Flex>
-    <Link pb="10px" color="green.500" href="mailto:gabrielhicks@mail.com">
-      gabrielhicks@mail.com
+    <Link pb="10px" color="green.500" href="mailto:me@gabrielhicks.dev">
+      me@gabrielhicks.dev
     </Link>
   </>
 );
