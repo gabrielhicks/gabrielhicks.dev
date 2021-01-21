@@ -9,10 +9,10 @@ const Hero = ({ title, subtitle }) => (
     height="80vh"
   >
     <Grid templateRows="repeat(2, 1fr)" gap={2}>
-      <Heading as="h1" fontSize="11vw">
+      <Heading as="h1" fontSize="10vw">
         {title}
       </Heading>
-      <Heading fontWeight="normal" fontSize="5.5vw">
+      <Heading fontWeight="normal" fontSize="5vw">
         {subtitle}
       </Heading>
     </Grid>
