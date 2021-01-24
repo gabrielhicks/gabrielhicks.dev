@@ -1,0 +1,123 @@
+---
+title: 'How to Access Spotify’s Web API Using Ruby, RESTClient, and JSON'
+publishedAt: '2020-09-09'
+summary: 'Client-side API Authorization using Spotify’s Web API'
+image: '/public/blog/2019/banner.jpg'
+---
+
+## First things first:
+
+![[https://developer.spotify.com/assets/WebAPI_intro.png](https://developer.spotify.com/assets/WebAPI_intro.png)](https://cdn-images-1.medium.com/max/2000/1*xt_TlsuG3FtSy22WPrqmNg.png)_[https://developer.spotify.com/assets/WebAPI_intro.png](https://developer.spotify.com/assets/WebAPI_intro.png)_
+
+### What is an API and why would I want to use one?
+
+As a new developer, I have often heard of APIs, but never fully understood what they were. An Application Programming Interface is a tool that purposefully makes data accessible, and specifically defines how, and in what ways we can interact with this data. APIs usually have thorough documentation that is both technical and practical, detailing many designed user experiences.
+
+### What is RESTClient and JSON?
+
+REST(**RE**presentational **S**tate **T**ransfer) Client, in our case, is a Ruby gem that acts as an intermediary between us and our API that collects a ‘response’. JSON(**J**ava**S**cript **O**bject **N**otation) is another translator, which takes the objects collected by RESTClient from our API request, and ‘parses’ that data, formatting the objects in our response into an easily accessible hash.
+
+### Spotify’s Authorization Flow
+
+![[https://developer.spotify.com/documentation/general/guides/authorization-guide/#client-credentials-flow](https://developer.spotify.com/documentation/general/guides/authorization-guide/#client-credentials-flow)](https://cdn-images-1.medium.com/max/2088/1*maFrNuOQOLiWqNEVCyTM-g.png)_[https://developer.spotify.com/documentation/general/guides/authorization-guide/#client-credentials-flow](https://developer.spotify.com/documentation/general/guides/authorization-guide/#client-credentials-flow)_
+
+### Now that we have an overview of these tools, how do we use them?
+
+In our project, we decided to allow a user to create playlists dependent on their mood. We needed to import song data from Spotify into a database, so that it would be accessible to a user while our app was functioning. We designed algorithms to choose songs for any given playlist, based on audio feature data and metrics that Spotify assigns to every individual track.
+
+## **Step 1: Accessing your Spotify Credentials and Authorizing your App**
+
+Log into Spotify’s [developer interface](https://developer.spotify.com/dashboard/applications), and click the green ‘Create An App’ button. You will be prompted to name and describe your app. When you are finished you will check the boxes, submit, and be redirected to the dashboard that your _authorization **depends** on_. Copy and save your ‘Client ID’ and ‘Client Secret’, these are your secret codes to access the API.
+
+![The dashboard following this screen holds the secrets you desire](https://cdn-images-1.medium.com/max/2000/1*xko8OezZENmHv-eZbYtCUA.png)_The dashboard following this screen holds the secrets you desire_
+
+## **Step 2: Whitelisting a Redirect URI**
+
+Before you leave the developer dashboard, you will need to white list a redirect URI. You can do this by going to the ‘Edit Settings’ button, and clicking ‘Add’ under Redirect URIs. Using [https://example.com/callback/](https://example.com/callback/) as our Redirect URI will work for our purposes!
+
+![](https://cdn-images-1.medium.com/max/2956/1*JRIXpPNZ0ndLuR6X_lr4Bw.png)
+
+## **Step 3: Using our Spotify Credentials to generate an Access Token**
+
+Next, we will use the Redirect URI we whitelisted in Step 3 to give us the access token! Copy this URI and paste it into a [URL encoder](https://www.urlencoder.org/). It should look something like this
+
+> “_https%3A%2F%2Fexample.com%2Fcallback%2F”._
+
+We are now going to do surgery. Spotify’s Implicit Grant Flow tells us we need to use our encoded URI and our client id, formatted into this specific address:
+
+> https://accounts.spotify.com/authorize?client_id=YOURCLIENTIDHERE&redirect_uri=YOURENCODEDURIHERE&scope=user-read-private%20user-read-email&response_type=token&state=123
+
+My address, after using my Client ID and URI, looked like this:
+
+> [https://accounts.spotify.com/authorize?client_id=](https://accounts.spotify.com/authorize?client_id=YOURCLIENTIDHERE&redirect_uri=YOURENCODEDURIHERE&scope=user-read-private%20user-read-email&response_type=token&state=123)8449a8d2ab9b40f8b14324f3a22a368d[&redirect_uri=](https://accounts.spotify.com/authorize?client_id=YOURCLIENTIDHERE&redirect_uri=YOURENCODEDURIHERE&scope=user-read-private%20user-read-email&response_type=token&state=123)https%3A%2F%2Fexample.com%2Fcallback%2F[&scope=user-read-private%20user-read-email&response_type=token&state=123](https://accounts.spotify.com/authorize?client_id=YOURCLIENTIDHERE&redirect_uri=YOURENCODEDURIHERE&scope=user-read-private%20user-read-email&response_type=token&state=123)
+
+We now, are going to paste this constructed address into our browser. We will be directed to a Spotify page to authorize our app!
+
+![Spotify App Authorization](https://cdn-images-1.medium.com/max/2188/1*x-B3Pqkk8SdulVHARhBoZQ.png)_Spotify App Authorization_
+
+> # **We are not done here! Don’t close this web page yet!**
+
+If you look in the address bar, you will see a peculiar web address, hopefully the one you whitelisted in your Spotify dashboard… however… it also includes our very own Access Token!!!
+
+> [https://example.com/callback/#access_token=BQB8Yobrgz4Uagd3DFs8qGjHcDiIs0g6skWm8phGn1AcncYXcfdXDpzqvNanBcH2Y0BCZUNGzB57gn0O8dD01J62kCYcJ85XcHKCmw5AI7oShU8W7osmfyAcQMKGlr0zgsp_fPNYY3qu7Fc_XSVlUid0Xc4&token_type=Bearer&expires_in=3600&state=123](https://example.com/callback/#access_token=BQB8Yobrgz4Uagd3DFs8qGjHcDiIs0g6ziKm8phGn1AcncYXcfdXDpzqvNanBcHM70BCZUNGzB57gn0O8dD01J62kCYcJ85XcHKCmw5AI7oShU8W7osmfyAcQMKGlr0zgsp_fPNYY3qu7Fc_XSVlUid0Xc4&token_type=Bearer&expires_in=3600&state=123)
+
+Copy and save the Access Token, which includes everything after [#access_token=](https://example.com/callback/#access_token=BQB8Yobrgz4Uagd3DFs8qGjHcDiIs0g6ziKm8phGn1AcncYXcfdXDpzqvNanBcHM70BCZUNGzB57gn0O8dD01J62kCYcJ85XcHKCmw5AI7oShU8W7osmfyAcQMKGlr0zgsp_fPNYY3qu7Fc_XSVlUid0Xc4&token_type=Bearer&expires_in=3600&state=123) and before [&token_type=Bearer](https://example.com/callback/#access_token=BQB8Yobrgz4Uagd3DFs8qGjHcDiIs0g6ziKm8phGn1AcncYXcfdXDpzqvNanBcHM70BCZUNGzB57gn0O8dD01J62kCYcJ85XcHKCmw5AI7oShU8W7osmfyAcQMKGlr0zgsp_fPNYY3qu7Fc_XSVlUid0Xc4&token_type=Bearer&expires_in=3600&state=123). This token type is important to note, we will also use this later on.
+
+_NOTE: Access Tokens will only work for 60 minutes, if the token expires, you can repeat this step for an additional 60 minutes of access._
+
+## Step 4: Setting up the app environment
+
+Now, we need to create the app! I’ll use this [boilerplate CLI design](https://github.com/gabrielhicks/boilerplate_CLI_env), and call it “medium_cli_app”. We next need to add the gem ‘rest-client’ to our Gemfile and bundle install. We are using ActiveRecord and Rake to seed data into a database, so we will also need these gems included, however I already had them in my template. Within our db/seeds.rb we will need to require both ‘json’ and ‘rest-client’.
+
+![Don’t forget to save!](https://cdn-images-1.medium.com/max/2000/1*ItdRObxFG923ocEOjrHlIQ.png)_Don’t forget to save!_
+
+## **Step 5: Using RESTClient and JSON to make an API request and parse a response**
+
+Back in our app seeds.rb file, we are going to create an “auth” variable so that we can easily pass it into our GET requests. This structure will be a hash, with the key “Authorization” and the value of your Access Token type, followed by your Access Token as a single string.
+
+> **auth** = {“Authorization”: “Bearer BQDc2NzoRj2M6I4WPRdYdjNsyzrhtYP1cPq4fJge44dQvpg90hOab6aRPylW8IZONZwMM1jh3d5ffapk1FsMcV9gsrBFIyu3U2b0–3u\_\_8XvFOr0D7p_iqF3uEFr-VI7DoFcW3bBsI_2fE1fntrjZ97buywackYoEYc”}
+
+Next, we will use a RestClient.get request, pass a Spotify API Endpoint in, and as a second arguement, our auth variable set as a header.
+
+> **endpoint1 **= RestClient.get(
+> ‘https://api.spotify.com/v1/browse/categories/mood/playlists?offset=0&limit=50',
+> headers=**auth**)
+
+Last, we will use a JSON.parse() method to parse the variable we set our RestClient.get response to.
+
+> **data1** = JSON.parse(**endpoint1**)
+
+Our final product, will look similar to this in our seeds.rb file:
+
+![We are almost there!!!](https://cdn-images-1.medium.com/max/2324/1*bxwyAyVyU13AS9B0zwtIpw.png)_We are almost there!!!_
+
+## **Step 6: Strategically importing Spotify’s Web API data into a database**
+
+Here is where you come in! Once we have made authorized our GET requests, we can more effectively utilize Spotify’s Web API documentation to determine endpoints we wish to access. We can preform endless methods on this collected data and use endless methods to seed it into our database. I will show a couple examples of how I used this access to parse, collect, and persist data points into my database.
+
+![](https://cdn-images-1.medium.com/max/3628/1*tc9j3XXyCabTcCWER80Qwg.png)
+
+![](https://cdn-images-1.medium.com/max/4020/1*S09N7npqJ3UrecbYN59Umw.png)
+
+## Final Thoughts
+
+This is not a comprehensive guide on API authorization. What this method allowed me to do, is overcome the barrier of entry into the wealth of value APIs can offer. I frantically searched Google, Medium, Youtube, GitHub, and tried various Ruby gems specifically designed for accessing Spotify’s API but could not find a step by step approach (with images) how to be granted access. This is a jumping off place, I look forward to learning and understanding more dynamic ways of utilizing these tools. After my experience, I have deepened my respect for the traditional documents that as developers we often find ourselves. If you need any additional help, or would just like a person to walk through authorization with, reach out to me and I will see if I can be of some use to you!
+
+### Sources/References:
+
+[**API**
+*An application programming interface ( API) is a computing interface which defines interactions between multiple…*en.wikipedia.org](https://en.wikipedia.org/wiki/API)
+[**rest-client/rest-client**
+*A simple HTTP and REST client for Ruby, inspired by the Sinatra's microframework style of specifying actions: get, put…*github.com](https://github.com/rest-client/rest-client)
+[**JSON**
+*JavaScript Object Notation ( JSON, pronounced ; also ) is an open standard file format, and data interchange format…*en.wikipedia.org](https://en.wikipedia.org/wiki/JSON)
+[**Web API | Spotify for Developers**
+*Note: By using Spotify developer tools, you accept the Spotify Developer Terms of Service. Based on simple REST…*developer.spotify.com](https://developer.spotify.com/documentation/web-api/)
+[**Ruby-Doc.org**
+*Fast, searchable Ruby documentation for core and standard libraries. Plus, links to tutorials, guides, books, and…*ruby-doc.org](https://ruby-doc.org/)
+
+> HUGE shoutout to [Jake Fromm](), my partner for this project and my cohort who all encourage me to become a more well rounded developer!
+
+Link to public repo:
+[**gabrielhicks/literallyjustvibing**
+*Literally Just Vibing is a command-line application (CLI) that utilizes Spotify's Web API to create playlists based on…*github.com](https://github.com/gabrielhicks/literallyjustvibing)

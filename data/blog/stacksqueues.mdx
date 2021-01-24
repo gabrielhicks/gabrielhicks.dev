@@ -1,0 +1,71 @@
+---
+title: 'Stacks, Queues, and Linked Lists in JS'
+publishedAt: '2020-10-20'
+summary: 'An introduction to data structures and abstract data types'
+image: '/public/blog/2019/banner.jpg'
+---
+
+![[https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/08/JavaScript-data-structures.png](https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/08/JavaScript-data-structures.png)](https://cdn-images-1.medium.com/max/2000/1*zO-Q04-Bh5Xmn29cl72tEw.png)_[https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/08/JavaScript-data-structures.png](https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/08/JavaScript-data-structures.png)_
+
+### What are data structures?
+
+In computer science, data structures are particular formats utilized in the organization, management, and processing of data. There are many data structures that vary greatly in complexity. Essentially, a data structure exists to store information while creating a pathway to retrieve and use that information efficiently. Some data structures you may have seen before are arrays, hash tables, linked lists, trees, and graphs.
+
+![[https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/07/stack.png](https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/07/stack.png)](https://cdn-images-1.medium.com/max/2000/1*jmmrq54d4VlSBqMlhkCMRQ.png)_[https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/07/stack.png](https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/07/stack.png)_
+
+### What is a Stack?
+
+Stacks are structures that have conformity to the principle of Last-In-First-Out (LIFO). Real world representations are everywhere, while washing dishes or folding towels, anything that can be stacked will be unstacked starting with the object that was last placed on top. The first item in the stack will be the last item used in the stack. Arrays as well as asynchronous requests in JavaScript use this order of operations when executed.
+
+![[https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/08/queue.png](https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/08/queue.png)](https://cdn-images-1.medium.com/max/2000/1*O1JjK73XEwKfM3oPXGX_vQ.png)_[https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/08/queue.png](https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/08/queue.png)_
+
+### What is a Queue?
+
+A queue can be thought of the inverse of a stack. Queues conform to the principle First-In-First-Out (FIFO). Also well represented in real life, any time you stand in line for a service, you expect to move in one direction toward the front of the line. Arrays can be used to implement queues in JavaScript.
+
+### How can I use stacks and queues in JavaScript?
+
+If using an array as a stack, JavaScript provides the methods _push()_ and _pop()_. To demonstrate use cases:
+
+> // set a variable stack to an array of numbers
+> let stack = [0, 1, 2, 3, 4, 5];
+> // to remove an item from the **top** of the stack, we will use the pop() method
+> stack.pop() // the number 5 will be removed from the **top** of the stack
+> console.log(stack) // [0, 1, 2, 3, 4];
+> // to add an item to the **top** of the stack, we will use the push() method
+> stack.push(9) // the number 9 will be added to the **top** of the stack
+> console.log(stack) // [0, 1, 2, 3, 4, 9]
+
+We have similar use cases to utilize an array as a queue in JavaScript as well, with the _push()_ and _shift()_ methods
+
+> // set a variable queue to an array of numbers
+> let queue = [0, 1, 2, 3, 4, 5];
+> // to remove an item from the **front** of the queue, we will use the shift() method
+> queue.shift() // the number 0 will be removed from the **front** of the queue
+> console.log(queue) // [1, 2, 3, 4, 5];
+> // to add an item to the **end **of the queue, we will use the push() method
+> queue.push(6) // the number 6 will be added at the **end** of the queue
+> console.log(stack) // [1, 2, 3, 4, 5, 6]
+
+### Why?
+
+The previous examples may seem glum, boring, or dull, but as data becomes more sophisticated they will be incredibly vital to know and understand in order to traverse data efficiently. When using stacks and queues, our computer is looping through each element in the array while re-indexing those elements which results in greater time complexity. Linked lists are usually the best choice when dealing with large amounts of data. They provide easier access to directly move items, without the need to re-index an array.
+
+![[https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/08/Linked-List-1.png](https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/08/Linked-List-1.png)](https://cdn-images-1.medium.com/max/2000/1*X795z4unif6KYCHGN6V8cQ.png)_[https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/08/Linked-List-1.png](https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/08/Linked-List-1.png)_
+
+### Linked Lists: An overview
+
+A JavaScript developer at any level can appreciate the utility of an array. However, as applications grow more complex, insertion and deletion of items in particular becomes increasingly more efficient using a linked list. The anatomy of a linked list is either a node, which points to another node in one direction, or a node which points directly behind and directly in front of itself. This chain is effective to climb back and forth on without needing to re-index the collective data. Stacks and queues are patterns that can be seen and used in both arrays as well as linked lists.
+
+### Sources/References:
+
+[**JavaScript Data Structures Tutorial - Learn its Types and Implementation - DataFlair**
+*Next article in JavaScript DataFlair Tutorial Series will focus on different data structures in JavaScript. We will…*data-flair.training](https://data-flair.training/blogs/javascript-data-structures/)
+[**JavaScript Queue: How to Implement a Queue Using a JavaScript Array**
+*Summary: in this tutorial, you will learn about the queue data structure and how to implement a JavaScript queue using…*www.javascripttutorial.net](https://www.javascripttutorial.net/javascript-queue/)
+[**Implementing a Javascript Stack Using push & pop Methods of an Array**
+*Summary: this tutorial introduces you to the JavaScript stack data structure and shows you how to use an array as a…*www.javascripttutorial.net](https://www.javascripttutorial.net/javascript-stack/)
+[**Exploring Stacks and Queues via JavaScript | DigitalOcean**
+*While this tutorial has content that we believe is of great benefit to our community, we have not yet tested or edited…*www.digitalocean.com](https://www.digitalocean.com/community/tutorials/js-stacks-queues)
+[**Intro to Linked Lists via JavaScript - Part 1: Overview | DigitalOcean**
+*While this tutorial has content that we believe is of great benefit to our community, we have not yet tested or edited…*www.digitalocean.com](https://www.digitalocean.com/community/tutorials/js-linked-lists-overview)

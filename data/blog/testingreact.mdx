@@ -1,0 +1,80 @@
+---
+title: 'Start Testing Your React Applications'
+publishedAt: '2021-01-05'
+summary: 'Resources to start unit testing React applications with the latest tools such as Jest and react-testing-library'
+image: '/public/blog/2019/banner.jpg'
+---
+
+![[https://www.etechgs.com/functions-tasks-qa-team-call-center/](https://www.etechgs.com/functions-tasks-qa-team-call-center/)](https://cdn-images-1.medium.com/max/2000/1*ReiR7FGz5HYWJzUctMpLiw.png)_[https://www.etechgs.com/functions-tasks-qa-team-call-center/](https://www.etechgs.com/functions-tasks-qa-team-call-center/)_
+
+I recently started an exciting side project with my two best friends! One of my friends is a seasoned web developer, turned SCRUM Master, who we will reference as ‘B’. My other friend, ‘R’, is a self-taught JavaScript developer who is interested in learning React. I am a React enthusiast, so we set out to develop a PERN (PostgreSQL, Express, React and Node.js) stack application together. ‘B’ is taking the lead as project manager, as well as leading the initial backend and API development, while I try to lead my incredibly smart friend ‘R’ through the basics of React in our initial setup of the frontend.
+
+Less than half an hour into initializing repositories, ‘B’ came to us with a fully built out Trello board, equip with diagrams, rendered images, incremental goals, and task assignments. This was incredible, as it is how I imagine an industry workflow would be, however, I repeatedly saw the words *tests, testing, *and* test *littered everywhere. It was in this moment, I realized I would be spending significant time learning how to write tests in a way that may lead my SCRUM Master friend into thinking I had known how to all along.
+
+![[https://coding.abel.nu/2012/04/test-and-verification-in-scrum/](https://coding.abel.nu/2012/04/test-and-verification-in-scrum/)](https://cdn-images-1.medium.com/max/2000/1*N1LG6NoTSD34RLMTN92G6w.png)_[https://coding.abel.nu/2012/04/test-and-verification-in-scrum/](https://coding.abel.nu/2012/04/test-and-verification-in-scrum/)_
+
+I quickly sought out sordid places, finding the JavaScript testing world to be something like the Wild West. I stumbled upon and continued to circle back to a gentleman from Utah called [Kent C. Dodds](https://github.com/kentcdodds), who had extensive experience, as well as countless blogs, videos, and open source courses how to test JavaScript and React applications. I quickly took to a couple of Kent’s public repositories of his reputable courses [TestingJavaScript](https://github.com/kentcdodds/react-testing-library-course) and [EpicReact](https://github.com/kentcdodds/testing-react-apps), and sent a very basic unit test to ‘B’ in which my friend replied “looks good enough to me”.
+
+> # It worked! In a short few hours, I had regained confidence in myself, and seemingly blown away the expectations my friend may have had of me in regards to my testing abilities!
+
+I will provide some quick code snippet example that are based off of Kent’s teachings from his [EpicReact — Testing React Apps ](https://github.com/kentcdodds/testing-react-apps)repository that I applied to the application I am currently developing with my friends.
+
+The initial test I sent ‘B’ was a direct reflection of the base knowledge in the first iteration of exercises. This first test was written only using React, ReactDOM, and Jest. It looked something like this:
+
+    import * as React from 'react'
+
+    import ReactDOM from 'react-dom'
+
+    import Counter from '../../components/Home'
+
+    test('index page is rendered reading Hello World', () => {
+
+    const div = document.createElement('div');
+
+    document.body.append(div);
+
+    ReactDOM.render(<App />, div);
+
+    const helloWorld = div.querySelector('h1');
+
+    expect(helloWorld.textContent).toMatch(/hello world/i);
+
+    })
+
+As I continued on learning after gaining the confidence of my team members, I evolved this first test, implementing some new methods from react-testing-library I picked up along the way. My refactored first test, my second organically written test ever, now looked like this:
+
+    import { render } from '@testing-library/react';
+
+    import * as React from 'react';
+
+    import App from './App';
+
+
+    test(index page is rendered reading Hello World', () => {
+
+    const { container } = render(<App />);
+
+    const helloWorld = container.querySelector('h1');
+
+    expect(helloWorld.textContent).toMatch(/hello world/i);
+
+    })
+
+I learned the benefits of using RTL, such as not needing to clean up elements from the DOM, as well as not needing to create a div, as it would be done for me. Moreover what I learned, was that testing wasn’t so scary. In fact, testing with its easy readability, and very familiar syntax was actually kind of fun! I am still continuing to learn every hour as I push through this material, but am finding what I am struggling with and lacking must be within the full coursework and missing video accompaniment of EpicReact.
+
+I am now dedicated to developing more unit, integration, and end-to-end testing methods, and look forward to sharing my journey here. I highly encourage every new or newer developer if they haven’t already to give testing a shot. Definitely seek our trusted and transparent sources like Kent, and have confidence in your abilities as engineers.
+
+I felt as if I was late to the game in this specific area, but in other areas I have been able to encourage and aid my other friend ‘R’s journey learning React. With the body of knowledge and easy to access materials available on the internet, the only thing standing in the way is taking the action.
+
+I am a life long learner, and I am far from where I want to be at in my knowledge, but I am lightyears ahead of where I thought I might be one year ago today. I look forward and embrace this New Year as the year of ‘realization’. Through the simple action of learning how to write an extremely basic test in a friendly project environment, I feel hopeful and empowered to push forward in spite of myself with that same energy in all things in 2021.
+
+## Resources
+
+[**Get Really Good at React**
+*I was just about to start preparing the app we're working on for general availability, which includes solving a lot of…*epicreact.dev](https://epicreact.dev/)
+[**Testing JavaScript with Kent C. Dodds**
+*by Kent C. Dodds When a user encounters a bug they look like this: 🤬 Bugs grind work to a halt. Bugs cause financial…*testingjavascript.com](https://testingjavascript.com/)
+[**kentcdodds - Overview**
+*working hard to make the world better with software working hard to make the world better with software Improving the…*github.com](https://github.com/kentcdodds)
+[**Testing | Kent C. Dodds**
+*Kent C. Dodds testing blog posts*kentcdodds.com](https://kentcdodds.com/blog/?q=testing)

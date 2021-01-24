@@ -10,7 +10,7 @@ import { ProjectContainer } from '../components/ProjectContainer';
 const Index = () => (
   <Container height="100%">
     <Hero />
-    <Main>
+    <Main spacing={2} columns={[1, 2, 3]}>
       <ProjectContainer />
     </Main>
 
