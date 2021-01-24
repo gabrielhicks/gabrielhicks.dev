@@ -14,28 +14,28 @@ export default class Document extends NextDocument {
             content="Pp_AlJMcynTuCnFnUOlynldmgPukRP_AY5lxl6N1qPM"
             name="google-site-verification"
           />
-          <link href="/favicons/favicon.ico" rel="shortcut icon" />
+          <link href="/static/favicons/favicon.ico" rel="shortcut icon" />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/favicons/apple-touch-icon.png"
+            href="/static/favicons/apple-touch-icon.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="/favicons/favicon-32x32.png"
+            href="/static/favicons/favicon-32x32.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="/favicon-16x16.png"
+            href="/static/favicons/favicon-16x16.png"
           />
-          <link rel="manifest" href="/favicons/site.webmanifest" />
+          <link rel="manifest" href="/static/favicons/site.webmanifest" />
           <link
             rel="mask-icon"
-            href="/favicons/safari-pinned-tab.svg"
+            href="/static/favicons/safari-pinned-tab.svg"
             color="#b1b62b"
           />
         </Head>

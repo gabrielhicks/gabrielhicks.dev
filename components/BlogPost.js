@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { Box, Divider } from '@chakra-ui/react';
 import { parseISO, format } from 'date-fns';
 
@@ -14,6 +14,7 @@ const BlogPost = ({ title, summary, publishedAt, slug }) => {
         borderWidth="1px"
         borderRadius="md"
         overflow="hidden"
+        as="article"
       >
         {/* <Image width={3360} height={1864} src="/og.png" alt={title} /> */}
 

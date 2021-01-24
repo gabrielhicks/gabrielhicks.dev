@@ -1,7 +1,7 @@
 /* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable get-off-my-lawn/prefer-arrow-functions */
 import React from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { parseISO, format } from 'date-fns';
 import { Box } from '@chakra-ui/react';
 
@@ -11,7 +11,13 @@ import BlogSeo from '../components/BlogSeo';
 
 export default function BlogLayout({ children, frontMatter }) {
   return (
-    <Container>
+    <Container
+      title={`${frontMatter.title} – Gabriel Hicks`}
+      description={frontMatter.summary}
+      image={`https://gabrielhicks.dev${frontMatter.image}`}
+      date={new Date(frontMatter.publishedAt).toISOString()}
+      type="article"
+    >
       <BlogSeo
         url={`https://gabrielhicks.dev/blog/${frontMatter.slug}`}
         {...frontMatter}
@@ -20,7 +26,7 @@ export default function BlogLayout({ children, frontMatter }) {
         <Box
           mx="2"
           my="2"
-          maxW="70vw"
+          w={['90vw', '75vw', '50vw']}
           textAlign="center"
           display="flex"
           flexDirection="column"
@@ -28,27 +34,23 @@ export default function BlogLayout({ children, frontMatter }) {
           borderRadius="md"
           overflow="hidden"
         >
-          <Box borderRadius="md" fontSize="xx-large" as="h1">
+          <Box borderRadius="md" fontWeight="800" fontSize="xx-large" as="h1">
             {frontMatter.title}
           </Box>
-          <div>
-            <div>
-              <Image
+          {/* <Image
                 alt="Gabriel Hicks"
                 height={24}
                 width={24}
                 src="/avatar.jpg"
                 className="rounded-full"
-              />
-              <p>
-                {frontMatter.by}
-                {'Gabriel Hicks / '}
-                {format(parseISO(frontMatter.publishedAt), 'MMMM dd, yyyy')}
-              </p>
-            </div>
-            <p>{frontMatter.readingTime.text}</p>
-          </div>
-          <div>{children}</div>
+              /> */}
+          <Box textAlign="space-between">
+            {frontMatter.by}
+            {'Gabriel Hicks - '}
+            {format(parseISO(frontMatter.publishedAt), 'MMMM dd, yyyy')} -{' '}
+            {frontMatter.readingTime.text}
+          </Box>
+          {children}
         </Box>
       </Main>
     </Container>
