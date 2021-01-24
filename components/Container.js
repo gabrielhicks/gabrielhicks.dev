@@ -6,6 +6,8 @@ import { Flex, useColorMode } from '@chakra-ui/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
+import { Header } from './Header';
+
 export const Container = (props) => {
   const { colorMode } = useColorMode();
 
@@ -48,6 +50,7 @@ export const Container = (props) => {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
+      <Header />
       <Flex
         direction="column"
         alignItems="center"

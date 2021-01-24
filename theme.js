@@ -14,12 +14,17 @@ const breakpoints = createBreakpoints({
   xl: '80em'
 });
 
+const config = {
+  useSystemColorMode: false
+};
+
 const theme = extendTheme({
   colors: {
     black: '#16161D'
   },
   fonts,
   breakpoints,
+  config,
   icons: {
     logo: {
       path: (
