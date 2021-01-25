@@ -20,12 +20,12 @@ const CustomHeading = (props) => (
 );
 
 const CustomParagraph = (props) => (
-  <Text fontSize="lg" as="p" mb={'1.5rem'} {...props} />
+  <Text fontSize="lg" as="p" mt={4} {...props} />
 );
 
 const CustomLink = (props) => {
   const href = props.href;
-  const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
+  const isInternalLink = href && href.startsWith('/');
 
   if (isInternalLink) {
     return (
@@ -51,7 +51,7 @@ const MDXComponents = {
   ListItem,
   ListIcon,
   UnorderedList,
-  a: CustomLink
+  Link: CustomLink
 };
 
 export default MDXComponents;

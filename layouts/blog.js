@@ -28,7 +28,7 @@ export default function BlogLayout({ children, frontMatter }) {
         <Box
           mx="2"
           my="2"
-          w={['90vw', '75vw', '50vw']}
+          maxW={['90vw', '75vw', '50vw']}
           textAlign="left"
           display="flex"
           flexDirection="column"
