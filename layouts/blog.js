@@ -8,6 +8,7 @@ import { Box } from '@chakra-ui/react';
 import { Container } from '../components/Container';
 import { MediumDivider } from '../components/mdx/MediumDivider';
 import { Main } from '../components/Main';
+import { Footer } from '../components/Footer';
 import BlogSeo from '../components/BlogSeo';
 import { BlogAvatar } from '../components/mdx/BlogAvatar';
 
@@ -62,6 +63,7 @@ export default function BlogLayout({ children, frontMatter }) {
           {children}
         </Box>
       </Main>
+      <Footer />
     </Container>
   );
 }

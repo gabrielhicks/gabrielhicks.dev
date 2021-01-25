@@ -1,13 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 // import Image from 'next/image';
-import { Box, Divider } from '@chakra-ui/react';
+import { Box, Divider, Grid } from '@chakra-ui/react';
 import { parseISO, format } from 'date-fns';
 
 const BlogPost = ({ title, summary, publishedAt, slug }) => {
   return (
     <>
-      <Box
+      <Grid
+        templateRows="(3, 1fr)"
         mx="2"
         my="2"
         maxW="lg"
@@ -18,7 +19,7 @@ const BlogPost = ({ title, summary, publishedAt, slug }) => {
       >
         {/* <Image width={3360} height={1864} src="/og.png" alt={title} /> */}
 
-        <Box p="6">
+        <Grid templateRows="(3, 1fr)" p="6">
           <Box
             pt="0"
             fontSize="x-large"
@@ -30,11 +31,11 @@ const BlogPost = ({ title, summary, publishedAt, slug }) => {
             <Divider role="separator" orientation="horizontal" />
           </Box>
           <Box pt="2">{summary}</Box>
-          <Box fontSize="small" pt="2">
+          <Box alignSelf="flex-end" fontSize="small" pt="2">
             {format(parseISO(publishedAt), 'MMMM dd, yyyy')}
           </Box>
-        </Box>
-      </Box>
+        </Grid>
+      </Grid>
     </>
   );
 };
