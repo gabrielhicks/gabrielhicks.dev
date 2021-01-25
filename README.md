@@ -9,7 +9,11 @@ This is the third version of my web development and software engineering portfol
 
 ## Anatomy
 
-Currently I only have one landing page that prominently displays my most current projects from my time at Flatiron School. After my Flatiron projects I have listed Open Source projects I have contributed to as well as links to their respective repos.
+- "/"
+Currently I have a landing page that prominently displays my most current public projects as well as Open Source projects I have contributed to with links to their respective repos.
+
+- "/blog"
+I have fully integrated a blog landing page, right now I have been focusing on optimizing this setup for reusability and performance. I am excited for the upcoming blur up optimization for next/image. To get off the ground with my blog I have exported existing blogs as markdown and am working through the overall styling and components I would like to use as I move forward writing blogs on my own platform! After this system is worked out I will be adding a "/projects" that will have nice GIFs and blogs accompanying them including some that are not yet public!
 
 ## Fork, Clone, Run
 
