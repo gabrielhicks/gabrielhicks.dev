@@ -6,8 +6,10 @@ import { parseISO, format } from 'date-fns';
 import { Box } from '@chakra-ui/react';
 
 import { Container } from '../components/Container';
+import { MediumDivider } from '../components/mdx/MediumDivider';
 import { Main } from '../components/Main';
 import BlogSeo from '../components/BlogSeo';
+import { BlogAvatar } from '../components/mdx/BlogAvatar';
 
 export default function BlogLayout({ children, frontMatter }) {
   return (
@@ -27,29 +29,36 @@ export default function BlogLayout({ children, frontMatter }) {
           mx="2"
           my="2"
           w={['90vw', '75vw', '50vw']}
-          textAlign="center"
+          textAlign="left"
           display="flex"
           flexDirection="column"
           justifyContent="center"
           borderRadius="md"
           overflow="hidden"
         >
-          <Box borderRadius="md" fontWeight="800" fontSize="xx-large" as="h1">
+          <Box
+            mt="20"
+            borderRadius="md"
+            fontWeight="800"
+            fontSize="xx-large"
+            as="h1"
+          >
             {frontMatter.title}
           </Box>
-          {/* <Image
-                alt="Gabriel Hicks"
-                height={24}
-                width={24}
-                src="/avatar.jpg"
-                className="rounded-full"
-              /> */}
-          <Box textAlign="space-between">
-            {frontMatter.by}
-            {'Gabriel Hicks - '}
-            {format(parseISO(frontMatter.publishedAt), 'MMMM dd, yyyy')} -{' '}
-            {frontMatter.readingTime.text}
+          <Box
+            mt="0"
+            borderRadius="md"
+            fontWeight="400"
+            fontSize="x-large"
+            as="h2"
+          >
+            {frontMatter.summary}
           </Box>
+          <BlogAvatar
+            date={format(parseISO(frontMatter.publishedAt), 'MMMM dd, yyyy')}
+            readingTime={frontMatter.readingTime.text}
+          />
+          <MediumDivider />
           {children}
         </Box>
       </Main>
