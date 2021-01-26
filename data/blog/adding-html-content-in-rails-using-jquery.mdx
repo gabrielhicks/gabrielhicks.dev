@@ -1,0 +1,271 @@
+---
+title: 'Adding HTML Content Dynamically in Rails 6 Using jQuery'
+publishedAt: '2020-09-30'
+summary: 'Creating, submitting, and appending content without refreshing the webpage'
+image: '/static/blogs/adding-html/banner.jpg'
+---
+
+<Image
+  alt={`jQuery and Rails logos`}
+  src={'/static/blogs/adding-html/banner.jpg'}
+  width={1078}
+  height={416}
+  priority
+/>
+
+_<Link href="https://dailysmarty-production.s3.amazonaws.com/uploads/post/img/452/feature_thumb_jquery-rails.jpg">
+https://dailysmarty-production.s3.amazonaws.com/uploads/post/img/452/feature_thumb_jquery-rails.jpg</Link>_
+
+<Divider />
+
+<Paragraph>
+  While working on a new Rails project, I was tasked with creating a comment
+  model and implementing the ability to add comments to a video’s show page. I
+  needed to be able to access both the video and comment models, add comments to
+  the video page, display newly added comments, all without interrupting the
+  runtime of the video. Through trial and error, and dissecting various
+  tutorials for older versions of Rails, as well as other programming languages,
+  I found a working method using jQuery and a few snippets of Ruby code.
+</Paragraph>
+
+<Divider />
+
+<Heading>
+  Have a working Rails app with a User, Video/Post/Other, and a Comments joining
+  model
+</Heading>
+
+<Paragraph>
+  I am making the assumption that if you have found this blog, you already have
+  a functioning Rails app, and are interested in the method I used to add
+  comments without refreshing a page. To start you will need at least a User
+  model, in my case a Video model, and a Comment model that will join the two
+  previous.
+</Paragraph>
+
+<Divider />
+
+<Image
+  alt={`A Rails application root file directory, opened and displaying the contents of a models file`}
+  src={'/static/blogs/adding-html/image1.jpg'}
+  width={938}
+  height={794}
+/>
+
+_A Rails application root file directory, opened and displaying the contents of a models file_
+
+<Divider />
+
+<Paragraph>
+  The User model has many comments, the Video model has many comments, and
+  Comments belong to Users and Videos. Be sure to add a nested route for your
+  video resources, the code within _routes.rb_ should look something like this:
+</Paragraph>
+
+<Paragraph textAlign="center">
+<Code textAlign="left">
+
+resources :videos do  
+resources :comments
+end
+
+</Code>
+</Paragraph>
+
+<Divider />
+
+<Image
+  alt={`UML diagram representing the belongs_to, has_many relationships between a User, Comment, and Video model`}
+  src={'/static/blogs/adding-html/image2.jpg'}
+  width={796}
+  height={694}
+/>
+
+_UML diagram representing the belongs_to, has_many relationships between a User, Comment, and Video model_
+
+<Divider />
+
+<Heading>Add jQuery to your Rails application</Heading>
+
+<Paragraph>
+  To add jQuery to a Rails 6 app, there are a few quick things to do. First we
+  need to add *gem ‘jquery-rails’ *to our Gemfile. Next you will need to add
+  _require(“jquery”)_ within your _application.js_ file (mine was located at
+  app/javascript/packs). Finally we will add the following block of code in the
+  middle of our _config/webpack/environment.js_ file. Last, you will need to run
+  _‘yarn add jquery’_ within your root directory to ensure everything will work
+  properly.
+</Paragraph>
+
+<Divider />
+
+<Image
+  alt={`Image of config/webpack/environment.js directory`}
+  src={'/static/blogs/adding-html/image3.jpg'}
+  width={935}
+  height={314}
+/>
+
+_Image of *config/webpack/environment.js*_
+
+<Divider />
+
+<Heading>
+  Create comment forms, and prepare them to be rendered within the Video show
+  page
+</Heading>
+
+<Paragraph>
+  To create a new comment in Rails, we need to make a form that will take in the
+  User, the Video and the content body of the comment. We will save this as a
+  partial called _\_form.html.erb_ within our comment’s view file.
+</Paragraph>
+
+<Divider />
+
+<Image
+  alt={`A form_for with parameters set to “remote: true”, that will be rendered to submit a new comment in the application.`}
+  src={'/static/blogs/adding-html/image4.jpg'}
+  width={999}
+  height={297}
+/>
+
+_A form_for with parameters set to “remote: true”, that will be rendered to submit a new comment in the application._
+
+<Divider />
+
+<Paragraph>
+  This is the form that I wrote. Ignore the classes and placeholder, what is
+  important here is the arguments that form_for is taking. These arguments
+  correspond with the comments controller within the new and create methods,
+  passing the information needed to persist a comment to the database. The
+  remote: true argument is saying the form is going to call the action that you
+  specify for it.
+</Paragraph>
+
+<Paragraph>
+  Within our video show page, we will now render the comment form at the bottom.
+  Above this partial, nested within a _div_ tag, is where normally we would
+  display comments while iterating through a collection. Instead, I am using
+  jQuery to target an id I specified in the _div_ tag, which will render this
+  section separate from the video playing at the top. This render is looking for
+  a file we need to create called _\_comment.html.erb._
+</Paragraph>
+
+<Divider />
+
+<Image
+  alt={`A partial form containing the user who commenter, a link to their profile, the time the comment was added, and lastly the content of the comment.`}
+  src={'/static/blogs/adding-html/image5.jpg'}
+  width={1045}
+  height={301}
+/>
+
+_A partial form containing the user who commenter, a link to their profile, the time the comment was added, and lastly the content of the comment._
+
+<Divider />
+
+<Heading>
+  Next we will render the partial form in Video page, and setup our jQuery file
+</Heading>
+
+<Image
+  alt={`Iterating through each comment and rendering that data through the “_comment.html.erb” file`}
+  src={'/static/blogs/adding-html/image6.jpg'}
+  width={987}
+  height={302}
+/>
+
+_Iterating through each comment and rendering that data through the “\_comment.html.erb” file.>_
+
+<Divider />
+
+<Paragraph>
+  At this point our video show page’s comment section will look something like
+  the photo above. Now we get to add the corresponding *create.js.erb *file that
+  is going to pair with our create comment action listed within the comments
+  controller. Be sure to comment out any redirects you may have had previously,
+  as these will refresh your page and counter the methods we are trying to
+  utilize.
+</Paragraph>
+
+<Paragraph>
+  Now that we have made a _create.js.erb_ page within our comments view file, it
+  is time to fill it with some jQuery! I wanted to accomplish two things in
+  this, first was to add a comment to a page that would display without
+  refreshing, second is to reset the comment content after adding a comment. To
+  accomplish these goals we only need two lines of code that will target our
+  specified ids and classes.
+</Paragraph>
+
+<Divider />
+
+<Image
+  alt={`Two lines of jQuery`}
+  src={'/static/blogs/adding-html/image7.jpg'}
+  width={895}
+  height={249}
+/>
+
+_Two lines of jQuery, one to append the comment being made to the bottom of the comments column, and a second to clear the comment content text area after submitting the comment.](https://cdn-images-1.medium.com/max/2000/1*KCE9MhuFoXFTHlKEjpH2xA.png)_Two lines of jQuery, one to append the comment being made to the bottom of the comments column, and a second to clear the comment content text area after submitting the comment._
+
+<Divider />
+
+<Paragraph>
+  The first argument in each line is where the comment*pane id, and comment
+  class were targeted. Following these arguments are actions, *.append* which
+  will add it’s following code to the bottom of an item, and *.val\_ which sets
+  the value of the comment class to an empty string (or return to placeholder
+  value).
+</Paragraph>
+
+<Divider />
+
+<Paragraph>
+  After saving all of your files, you should now have a functioning comment
+  button, that will add comments without refreshing your page!
+</Paragraph>
+
+<Paragraph>
+
+<Image
+  alt={`A GIF of successful comment appending Hello World`}
+  src={'/static/blogs/adding-html/appending.gif'}
+  width={826}
+  height={290}
+/>
+
+_A GIF of successful comment appending. Hello World !_
+
+</Paragraph>
+
+<Divider />
+
+<Heading>Sources/References:</Heading>
+
+<Paragraph>
+  [**jQuery** *jQuery: The Write Less, Do More, JavaScript
+  Library*jquery.com](https://jquery.com/)
+</Paragraph>
+
+<Paragraph>
+  [**rails/jquery-rails** *jQuery! For Rails! So
+  great.*github.com](https://github.com/rails/jquery-rails)
+</Paragraph>
+
+<Paragraph>
+  > Thanks to [ZHENGJIAN LIU](undefined) for being an amazing partner to work
+  with on this project, as well as the rest of my cohort who continue to push me
+  to be the most adaptive programmer I can be!
+</Paragraph>
+
+<Paragraph>
+  Hosted demo version missing search function(API key): [**YouPlay**
+  you-play-heroku.herokuapp.com](https://you-play-heroku.herokuapp.com/)
+</Paragraph>
+
+<Paragraph>
+  Link to the public repo: [**gabrielhicks/YouPlay** *Mod2 Project with
+  Zhengjian Liu. Contribute to gabrielhicks/YouPlay development by creating an
+  account on GitHub.*github.com](https://github.com/gabrielhicks/YouPlay)
+</Paragraph>
