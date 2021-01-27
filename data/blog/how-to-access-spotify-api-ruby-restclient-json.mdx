@@ -40,12 +40,12 @@ https://developer.spotify.com/assets/WebAPI_intro.png</Link>_
 <Heading>What is RESTClient and JSON?</Heading>
 
 <Paragraph>
-  REST(**RE**presentational **S**tate **T**ransfer) Client, in our case, is a
-  Ruby gem that acts as an intermediary between us and our API that collects a
-  ‘response’. JSON(**J**ava**S**cript **O**bject **N**otation) is another
-  translator, which takes the objects collected by RESTClient from our API
-  request, and ‘parses’ that data, formatting the objects in our response into
-  an easily accessible hash.
+  REST(<b>RE</b>presentational <b>S</b>tate <b>T</b>ransfer) Client, in our
+  case, is a Ruby gem that acts as an intermediary between us and our API that
+  collects a ‘response’. JSON(<b>J</b>ava<b>S</b>cript <b>O</b>bject <b>N</b>
+  otation) is another translator, which takes the objects collected by
+  RESTClient from our API request, and ‘parses’ that data, formatting the
+  objects in our response into an easily accessible hash.
 </Paragraph>
 
 <Divider />
@@ -87,13 +87,16 @@ https://developer.spotify.com/documentation/general/guides/authorization-guide/#
 </Heading>
 
 <Paragraph>
-  Log into Spotify’s [developer
-  interface](https://developer.spotify.com/dashboard/applications), and click
-  the green ‘Create An App’ button. You will be prompted to name and describe
-  your app. When you are finished you will check the boxes, submit, and be
-  redirected to the dashboard that your _authorization **depends** on_. Copy and
-  save your ‘Client ID’ and ‘Client Secret’, these are your secret codes to
-  access the API.
+  Log into Spotify’s{' '}
+  <a href="https://developer.spotify.com/dashboard/applications">
+    <u>developer interface</u>
+  </a>
+  , and click the green ‘Create An App’ button. You will be prompted to name and
+  describe your app. When you are finished you will check the boxes, submit, and
+  be redirected to the dashboard that your <i>
+    authorization <b>depends</b> on
+  </i>. Copy and save your ‘Client ID’ and ‘Client Secret’, these are your secret
+  codes to access the API.
 </Paragraph>
 
 <Paragraph>
@@ -116,9 +119,8 @@ _The dashboard following this screen holds the secrets you desire_
 <Paragraph>
   Before you leave the developer dashboard, you will need to white list a
   redirect URI. You can do this by going to the ‘Edit Settings’ button, and
-  clicking ‘Add’ under Redirect URIs. Using
-  [https://example.com/callback/](https://example.com/callback/) as our Redirect
-  URI will work for our purposes!
+  clicking ‘Add’ under Redirect URIs. Using https://example.com/callback/ as our
+  Redirect URI will work for our purposes!
 </Paragraph>
 
 <Paragraph>
@@ -142,15 +144,13 @@ _Redirect URI settings_
 
 <Paragraph>
   Next, we will use the Redirect URI we whitelisted in Step 3 to give us the
-  access token! Copy this URI and paste it into a [URL
-  encoder](https://www.urlencoder.org/). It should look something like this
+  access token! Copy this URI and paste it into a URL encoder. It should look
+  something like this
 </Paragraph>
 
-<Paragraph textAlign="center">
-  <Code wordBreak="break-all" textAlign="left">
-    " "_https%3A%2F%2Fexample.com%2Fcallback%2F" "
-  </Code>
-</Paragraph>
+```bash
+https%3A%2F%2Fexample.com%2Fcallback%2F
+```
 
 <Paragraph>
   We are now going to do surgery. Spotify’s Implicit Grant Flow tells us we need
@@ -158,25 +158,27 @@ _Redirect URI settings_
   address:
 </Paragraph>
 
-<Paragraph textAlign="center">
-  <Code wordBreak="break-all" textAlign="left">
-    "
-    https://accounts.spotify.com/authorize?client_id=YOURCLIENTIDHERE&redirect_uri=YOURENCODEDURIHERE&scope=user-read-private%20user-read-email&response_type=token&state=123
-    "
-  </Code>
-</Paragraph>
+```bash
+https://accounts.spotify.com/authorize?
+client_id=YOURCLIENTIDHERE
+&redirect_uri=YOURENCODEDURIHERE
+&scope=user-read-private%20user-read-email
+&response_type=token
+&state=123
+```
 
 <Paragraph>
   My address, after using my Client ID and URI, looked like this:
 </Paragraph>
 
-<Paragraph textAlign="center">
-  <Code wordBreak="break-all" textAlign="left">
-    "
-    https://accounts.spotify.com/authorize?client_id=YOURCLIENTIDHERE&redirect_uri=YOURENCODEDURIHERE&scope=user-read-private%20user-read-email&response_type=token&state=123)8449a8d2ab9b40f8b14324f3a22a368d[&redirect_uri=](https://accounts.spotify.com/authorize?client_id=YOURCLIENTIDHERE&redirect_uri=YOURENCODEDURIHERE&scope=user-read-private%20user-read-email&response_type=token&state=123)https%3A%2F%2Fexample.com%2Fcallback%2F[&scope=user-read-private%20user-read-email&response_type=token&state=123](https://accounts.spotify.com/authorize?client_id=YOURCLIENTIDHERE&redirect_uri=YOURENCODEDURIHERE&scope=user-read-private%20user-read-email&response_type=token&state=123
-    "
-  </Code>
-</Paragraph>
+```bash
+https://accounts.spotify.com/authorize?
+client_id=8449a8d2ab9b40f8b14324f3a22a368d
+&redirect_uri=https%3A%2F%2Fexample.com%2Fcallback%2F
+&scope=user-read-private%20user-read-email
+&response_type=token
+&state=123
+```
 
 <Divider />
 
@@ -208,13 +210,13 @@ _Spotify App Authorization_
   our very own Access Token!!!
 </Paragraph>
 
-<Paragraph textAlign="center">
-  <Code wordBreak="break-all" textAlign="left">
-    "
-    _https://example.com/callback/#access_token=BQB8Yobrgz4Uagd3DFs8qGjHcDiIs0g6skWm8phGn1AcncYXcfdXDpzqvNanBcH2Y0BCZUNGzB57gn0O8dD01J62kCYcJ85XcHKCmw5AI7oShU8W7osmfyAcQMKGlr0zgsp_fPNYY3qu7Fc_XSVlUid0Xc4&token_type=Bearer&expires_in=3600&state=123](https://example.com/callback/#access_token=BQB8Yobrgz4Uagd3DFs8qGjHcDiIs0g6ziKm8phGn1AcncYXcfdXDpzqvNanBcHM70BCZUNGzB57gn0O8dD01J62kCYcJ85XcHKCmw5AI7oShU8W7osmfyAcQMKGlr0zgsp_fPNYY3qu7Fc_XSVlUid0Xc4&token_type=Bearer&expires_in=3600&state=123_
-    "
-  </Code>
-</Paragraph>
+```bash
+https://example.com/callback/
+#access_token=BQB8Yobrgz4Uagd3DFs8qGjHcDiIs0g6skWm8phGn1AcncYXcfdXDpzqvNanBcH2Y0BCZUNGzB57gn0O8dD01J62kCYcJ85XcHKCmw5AI7oShU8W7osmfyAcQMKGlr0zgsp_fPNYY3qu7Fc_XSVlUid0Xc4
+&token_type=Bearer
+&expires_in=3600
+&state=123
+```
 
 <Paragraph>
   Copy and save the Access Token, which includes everything after
@@ -263,39 +265,29 @@ _Don’t forget to save!_
   followed by your Access Token as a single string.
 </Paragraph>
 
-<Paragraph textAlign="center">
-  <Code wordBreak="break-all" textAlign="left">
-    " auth = _"Authorization": "Bearer
-    BQDc2NzoRj2M6I4WPRdYdjNsyzrhtYP1cPq4fJge44dQvpg90hOab6aRPylW8IZONZwMM1jh3d5ffapk1FsMcV9gsrBFIyu3U2b0–3u\_\_8XvFOr0D7p_iqF3uEFr-VI7DoFcW3bBsI_2fE1fntrjZ97buywackYoEYc"_
-    "
-  </Code>
-</Paragraph>
+```ruby
+auth = {"Authorization": "Bearer BQDc2NzoRj2M6I4WPRdYdjNsyzrhtYP1cPq4fJge44dQvpg90hOab6aRPylW8IZONZwMM1jh3d5ffapk1FsMcV9gsrBFIyu3U2b0–3u\_\_8XvFOr0D7p_iqF3uEFr-VI7DoFcW3bBsI_2fE1fntrjZ97buywackYoEYc"}
+```
 
 <Paragraph>
   Next, we will use a RestClient.get request, pass a Spotify API Endpoint in,
   and as a second arguement, our auth variable set as a header.
 </Paragraph>
 
-<Paragraph textAlign="center">
-  <Code wordBreak="break-all" textAlign="left">
-"
-    **endpoint1 **= RestClient.get(
- "   ‘https://api.spotify.com/v1/browse/categories/mood/playlists?offset=0&limit=50',
-    headers=**auth**)
-
-  </Code>
-</Paragraph>
+```ruby
+endpoint1 = RestClient.get(
+‘https://api.spotify.com/v1/browse/categories/mood/playlists?offset=0&limit=50',
+headers=auth)
+```
 
 <Paragraph>
   Last, we will use a JSON.parse() method to parse the variable we set our
   RestClient.get response to.
 </Paragraph>
 
-<Paragraph textAlign="center">
-  <Code wordBreak="break-all" textAlign="left">
-    " **data1** = JSON.parse(**endpoint1**) "
-  </Code>
-</Paragraph>
+```ruby
+data1 = JSON.parse(endpoint1)
+```
 
 <Paragraph>
   Our final product, will look similar to this in our seeds.rb file:
@@ -369,6 +361,8 @@ _More code_
   some use to you!
 </Paragraph>
 
+<Divider />
+
 <Heading>Sources/References:</Heading>
 
 <Paragraph>
@@ -406,7 +400,7 @@ _More code_
   all encourage me to become a more well rounded developer!
 </Paragraph>
 
-<Paragraph>Link to public repo:</Paragraph>
+<Heading>Link to public repo:</Heading>>
 
 <Paragraph>
   [**gabrielhicks/literallyjustvibing** *Literally Just Vibing is a command-line

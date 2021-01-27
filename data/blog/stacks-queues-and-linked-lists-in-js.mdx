@@ -84,40 +84,54 @@ https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/08/q
 <Heading>How can I use stacks and queues in JavaScript?</Heading>
 
 <Paragraph>
-  If using an array as a stack, JavaScript provides the methods <i>push()</i>{' '}
-  and <i>pop()</i>. To demonstrate use cases:
+  If using an array as a stack, JavaScript provides the methods{' '}
+  <code className="language-js">.push()</code>
+  and <code className="language-js">.pop()</code>. To demonstrate use cases:
 </Paragraph>
 
-<Code>
-
+```js
 // set a variable stack to an array of numbers
 let stack = [0, 1, 2, 3, 4, 5];
-// to remove an item from the **top** of the stack, we will use the pop() method
-stack.pop() // the number 5 will be removed from the **top** of the stack
-console.log(stack) // [0, 1, 2, 3, 4];
-// to add an item to the **top** of the stack, we will use the push() method
-stack.push(9) // the number 9 will be added to the **top** of the stack
-console.log(stack) // [0, 1, 2, 3, 4, 9]
 
-</Code>
+// to remove an item from the top of the stack,
+// we will use the pop() method
+stack.pop();
+
+// the number 5 will be removed from the top of the stack
+console.log(stack); // [0, 1, 2, 3, 4];
+
+// to add an item to the top of the stack,
+// we will use the push() method
+stack.push(9);
+
+// the number 9 will be added to the top of the stack
+console.log(stack); // [0, 1, 2, 3, 4, 9]
+```
 
 <Paragraph>
   We have similar use cases to utilize an array as a queue in JavaScript as
-  well, with the _push()_ and _shift()_ methods
+  well, with the <code className="language-js">.push()</code> and{' '}
+  <code className="language-js">.shift()</code> methods
 </Paragraph>
 
-<Code>
-
+```js
 // set a variable queue to an array of numbers
 let queue = [0, 1, 2, 3, 4, 5];
-// to remove an item from the **front** of the queue, we will use the shift() method
-queue.shift() // the number 0 will be removed from the **front** of the queue
-console.log(queue) // [1, 2, 3, 4, 5];
-// to add an item to the **end **of the queue, we will use the push() method
-queue.push(6) // the number 6 will be added at the **end** of the queue
-console.log(stack) // [1, 2, 3, 4, 5, 6]
 
-</Code>
+// to remove an item from the front of the queue,
+// we will use the shift() method
+queue.shift();
+
+// the number 0 will be removed from the front of the queue
+console.log(queue); // [1, 2, 3, 4, 5];
+
+// to add an item to the end of the queue,
+//we will use the push() method
+queue.push(6);
+
+// the number 6 will be added at the end of the queue
+console.log(stack); // [1, 2, 3, 4, 5, 6]
+```
 
 <Divider />
 
@@ -159,6 +173,8 @@ https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/08/L
   re-index the collective data. Stacks and queues are patterns that can be seen
   and used in both arrays as well as linked lists.
 </Paragraph>
+
+<Divider />
 
 <Heading>Sources/References:</Heading>
 

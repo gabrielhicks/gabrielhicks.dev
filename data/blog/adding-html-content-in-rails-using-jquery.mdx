@@ -59,19 +59,16 @@ _A Rails application root file directory, opened and displaying the contents of 
 <Paragraph>
   The User model has many comments, the Video model has many comments, and
   Comments belong to Users and Videos. Be sure to add a nested route for your
-  video resources, the code within _routes.rb_ should look something like this:
+  video resources, the code within{' '}
+  <code className="language-ruby">routes.rb</code> should look something like
+  this:
 </Paragraph>
 
-<Paragraph textAlign="center">
-<Code textAlign="left">
-
-resources :videos do  
-resources :comments  
+```ruby
+resources :videos do
+resources :comments
 end
-
-</Code>
-
-</Paragraph>
+```
 
 <Divider />
 
@@ -90,12 +87,13 @@ _UML diagram representing the belongs_to, has_many relationships between a User,
 
 <Paragraph>
   To add jQuery to a Rails 6 app, there are a few quick things to do. First we
-  need to add *gem ‘jquery-rails’ *to our Gemfile. Next you will need to add
-  _require("jquery")_ within your _application.js_ file (mine was located at
-  app/javascript/packs). Finally we will add the following block of code in the
-  middle of our _config/webpack/environment.js_ file. Last, you will need to run
-  _‘yarn add jquery’_ within your root directory to ensure everything will work
-  properly.
+  need to add <code className="language-ruby">gem 'jquery-rails'</code> to our Gemfile. Next you will need to add
+<code className="language-js">require("jquery")</code> within your <code className="language-js">application.js</code> file (mine was located at
+app/javascript/packs). Finally we will add the following block of code in the
+middle of our <code className="language-js">config/webpack/environment.js</code> file. Last, you will need to run
+<code className="language-bash">yarn add jquery</code> within your root directory to ensure everything will work
+properly.
+
 </Paragraph>
 
 <Divider />
@@ -119,7 +117,8 @@ _Image of *config/webpack/environment.js*_
 <Paragraph>
   To create a new comment in Rails, we need to make a form that will take in the
   User, the Video and the content body of the comment. We will save this as a
-  partial called _\_form.html.erb_ within our comment’s view file.
+  partial called <code className="language-ruby">_form.html.erb</code> within
+  our comment’s view file.
 </Paragraph>
 
 <Divider />
@@ -131,13 +130,14 @@ _Image of *config/webpack/environment.js*_
   height={297}
 />
 
-_A form_for with parameters set to "remote: true", that will be rendered to submit a new comment in the application._
+_A form_for with parameters set to 'remote: true', that will be rendered to submit a new comment in the application._
 
 <Divider />
 
 <Paragraph>
   This is the form that I wrote. Ignore the classes and placeholder, what is
-  important here is the arguments that form_for is taking. These arguments
+  important here is the arguments that{' '}
+  <code className="language-ruby">form_for</code> is taking. These arguments
   correspond with the comments controller within the new and create methods,
   passing the information needed to persist a comment to the database. The
   remote: true argument is saying the form is going to call the action that you
@@ -146,11 +146,12 @@ _A form_for with parameters set to "remote: true", that will be rendered to subm
 
 <Paragraph>
   Within our video show page, we will now render the comment form at the bottom.
-  Above this partial, nested within a _div_ tag, is where normally we would
-  display comments while iterating through a collection. Instead, I am using
-  jQuery to target an id I specified in the _div_ tag, which will render this
-  section separate from the video playing at the top. This render is looking for
-  a file we need to create called _\_comment.html.erb._
+  Above this partial, nested within a <code className="language-html">div</code>{' '}
+  tag, is where normally we would display comments while iterating through a
+  collection. Instead, I am using jQuery to target an id I specified in the
+  <code className="language-html">div</code> tag, which will render this section
+  separate from the video playing at the top. This render is looking for a file we
+  need to create called <code className="language-ruby">_comment.html.erb</code>.
 </Paragraph>
 
 <Divider />
@@ -183,20 +184,20 @@ _Iterating through each comment and rendering that data through the "\_comment.h
 
 <Paragraph>
   At this point our video show page’s comment section will look something like
-  the photo above. Now we get to add the corresponding *create.js.erb *file that
-  is going to pair with our create comment action listed within the comments
-  controller. Be sure to comment out any redirects you may have had previously,
-  as these will refresh your page and counter the methods we are trying to
-  utilize.
+  the photo above. Now we get to add the corresponding{' '}
+  <code className="language-js">create.js.erb</code> file that is going to pair
+  with our create comment action listed within the comments controller. Be sure
+  to comment out any redirects you may have had previously, as these will
+  refresh your page and counter the methods we are trying to utilize.
 </Paragraph>
 
 <Paragraph>
-  Now that we have made a _create.js.erb_ page within our comments view file, it
-  is time to fill it with some jQuery! I wanted to accomplish two things in
-  this, first was to add a comment to a page that would display without
-  refreshing, second is to reset the comment content after adding a comment. To
-  accomplish these goals we only need two lines of code that will target our
-  specified ids and classes.
+  Now that we have made a <code className="language-js">create.js.erb</code>{' '}
+  page within our comments view file, it is time to fill it with some jQuery! I
+  wanted to accomplish two things in this, first was to add a comment to a page
+  that would display without refreshing, second is to reset the comment content
+  after adding a comment. To accomplish these goals we only need two lines of
+  code that will target our specified ids and classes.
 </Paragraph>
 
 <Divider />
@@ -208,16 +209,17 @@ _Iterating through each comment and rendering that data through the "\_comment.h
   height={249}
 />
 
-_Two lines of jQuery, one to append the comment being made to the bottom of the comments column, and a second to clear the comment content text area after submitting the comment.](https://cdn-images-1.medium.com/max/2000/1*KCE9MhuFoXFTHlKEjpH2xA.png)_Two lines of jQuery, one to append the comment being made to the bottom of the comments column, and a second to clear the comment content text area after submitting the comment._
+_Two lines of jQuery, one to append the comment being made to the bottom of the comments column, and a second to clear the comment content text area after submitting the comment._
 
 <Divider />
 
 <Paragraph>
   The first argument in each line is where the comment*pane id, and comment
-  class were targeted. Following these arguments are actions, *.append* which
-  will add it’s following code to the bottom of an item, and *.val\_ which sets
-  the value of the comment class to an empty string (or return to placeholder
-  value).
+  class were targeted. Following these arguments are actions,{' '}
+  <code className="language-js">.append</code> which will add it’s following
+  code to the bottom of an item, and <code className="language-js">.val</code>{' '}
+  which sets the value of the comment class to an empty string (or return to
+  placeholder value).
 </Paragraph>
 
 <Divider />

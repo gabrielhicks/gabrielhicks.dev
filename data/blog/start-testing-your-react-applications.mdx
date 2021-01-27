@@ -34,9 +34,9 @@ https://kiwiqatestingexperts.files.wordpress.com/2019/04/strategies-to-build-a-p
   fully built out Trello board, equip with diagrams, rendered images,
   incremental goals, and task assignments. This was incredible, as it is how I
   imagine an industry workflow would be, however, I repeatedly saw the words
-  *tests, testing, *and* test *littered everywhere. It was in this moment, I
-  realized I would be spending significant time learning how to write tests in a
-  way that may lead my SCRUM Master friend into thinking I had known how to all
+  <b>tests, testing,</b> and <b>test</b> littered everywhere. It was in this moment,
+  I realized I would be spending significant time learning how to write tests in
+  a way that may lead my SCRUM Master friend into thinking I had known how to all
   along.
 </Paragraph>
 
@@ -57,14 +57,20 @@ https://coding.abel.nu/wp-content/uploads/2012/04/scrum-loop-test2.png</Link>_
 <Paragraph>
   I quickly sought out sordid places, finding the JavaScript testing world to be
   something like the Wild West. I stumbled upon and continued to circle back to
-  a gentleman from Utah called [Kent C. Dodds](https://github.com/kentcdodds),
-  who had extensive experience, as well as countless blogs, videos, and open
-  source courses how to test JavaScript and React applications. I quickly took
-  to a couple of Kent’s public repositories of his reputable courses
-  [TestingJavaScript](https://github.com/kentcdodds/react-testing-library-course)
-  and [EpicReact](https://github.com/kentcdodds/testing-react-apps), and sent a
-  very basic unit test to ‘B’ in which my friend replied "looks good enough to
-  me".
+  a gentleman from Utah called{' '}
+  <a href="https://github.com/kentcdodds">
+    <u>Kent C. Dodds</u>
+  </a>
+  , who had extensive experience, as well as countless blogs, videos, and open source
+  courses how to test JavaScript and React applications. I quickly took to a couple
+  of Kent’s public repositories of his reputable courses
+  <a href="https://github.com/kentcdodds/react-testing-library-course">
+    <u> TestingJavaScript </u>
+  </a>
+  and <a href="https://github.com/kentcdodds/testing-react-apps">
+    <u>EpicReact</u>
+  </a>, and sent a very basic unit test to ‘B’ in which my friend replied "looks
+  good enough to me".
 </Paragraph>
 
 <Paragraph>
@@ -77,9 +83,12 @@ https://coding.abel.nu/wp-content/uploads/2012/04/scrum-loop-test2.png</Link>_
 
 <Paragraph>
   I will provide some quick code snippet example that are based off of Kent’s
-  teachings from his [EpicReact — Testing React Apps
-  ](https://github.com/kentcdodds/testing-react-apps)repository that I applied
-  to the application I am currently developing with my friends.
+  teachings from his{' '}
+  <a href="https://github.com/kentcdodds/testing-react-apps">
+    <u>EpicReact — Testing React Apps</u>
+  </a>{' '}
+  repository that I applied to the application I am currently developing with my
+  friends.
 </Paragraph>
 
 <Paragraph>
@@ -88,28 +97,23 @@ https://coding.abel.nu/wp-content/uploads/2012/04/scrum-loop-test2.png</Link>_
   React, ReactDOM, and Jest. It looked something like this:
 </Paragraph>
 
-<Paragraph textAlign="center">
-<Code textAlign="left">
+```jsx
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+import Counter from '../../components/Home';
 
-    import * as React from 'react'
-    import ReactDOM from 'react-dom'
-    import Counter from '../../components/Home'
+test('index page is rendered reading Hello World', () => {
+  const div = document.createElement('div');
 
-    test('index page is rendered reading Hello World', () => {
+  document.body.append(div);
 
-        const div = document.createElement('div');
+  ReactDOM.render(<App />, div);
 
-        document.body.append(div);
+  const helloWorld = div.querySelector('h1');
 
-        ReactDOM.render(<App />, div);
-
-        const helloWorld = div.querySelector('h1');
-
-        expect(helloWorld.textContent).toMatch(/hello world/i);
-    })
-
-</Code>
-</Paragraph>
+  expect(helloWorld.textContent).toMatch(/hello world/i);
+});
+```
 
 <Paragraph>
   As I continued on learning after gaining the confidence of my team members, I
@@ -118,9 +122,7 @@ https://coding.abel.nu/wp-content/uploads/2012/04/scrum-loop-test2.png</Link>_
   second organically written test ever, now looked like this:
 </Paragraph>
 
-<Paragraph textAlign="center">
-<Code textAlign="left">
-
+```jsx
     import { render } from '@testing-library/react';
     import * as React from 'react';
     import App from './App';
@@ -134,9 +136,7 @@ https://coding.abel.nu/wp-content/uploads/2012/04/scrum-loop-test2.png</Link>_
         expect(helloWorld.textContent).toMatch(/hello world/i);
 
     })
-
-</Code>
-</Paragraph>
+```
 
 <Paragraph>
   I learned the benefits of using RTL, such as not needing to clean up elements
