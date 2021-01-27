@@ -1,6 +1,184 @@
 import { css } from '@emotion/react';
 import { theme } from '@chakra-ui/react';
 
+// export const prismDarkTheme = css`
+//   code {
+//     white-space: pre;
+//   }
+//   code[class*='language-'],
+//   pre[class*='language-'] {
+//     color: #6089b4;
+//     ${'' /* color: #C5C8C6  white*/}
+//     background: none;
+//     text-shadow: none;
+//     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+//     font-size: 1em;
+//     text-align: left;
+//     white-space: pre;
+//     word-spacing: normal;
+//     word-break: normal;
+//     word-wrap: normal;
+//     line-height: 1.5;
+
+//     -moz-tab-size: 4;
+//     -o-tab-size: 4;
+//     tab-size: 4;
+
+//     -webkit-hyphens: none;
+//     -moz-hyphens: none;
+//     -ms-hyphens: none;
+//     hyphens: none;
+//   }
+
+//   @media print {
+//     code[class*='language-'],
+//     pre[class*='language-'] {
+//       text-shadow: none;
+//     }
+//   }
+
+//   pre[class*='language-'],
+//   :not(pre) > code[class*='language-'] {
+//     background: #1c1c1c;
+//   }
+
+//   /* Code blocks */
+//   pre[class*='language-'] {
+//     padding: 1em;
+//     margin: 0.5em 0;
+//     overflow: auto;
+//     border: 0.3em solid hsl(30, 20%, 40%);
+//     border-radius: 0.5em;
+//     box-shadow: 1px 1px 0.5em black inset;
+//   }
+
+//   /* Inline code */
+//   :not(pre) > code[class*='language-'] {
+//     padding: 0.15em 0.2em 0.05em;
+//     border-radius: 0.3em;
+//     border: 0.13em solid hsl(30, 20%, 40%);
+//     box-shadow: 1px 1px 0.3em -0.1em black inset;
+//     white-space: normal;
+//   }
+
+//   .token.arrow.operator {
+//     color: #6089b4;
+//   }
+
+//   .token.known-class-name.classname {
+//     color: #2b91af;
+//   }
+
+//   .token.maybe-class-name {
+//     color: #ce6700;
+//   }
+
+//   .token.property-access {
+//     color: #9872a2;
+//   }
+
+//   .token.method.property-access {
+//     color: #9872a2;
+//   }
+
+//   .token.method.function.property-access {
+//     color: #ce6700;
+//   }
+
+//   .token.maybe-class-name {
+//     color: #6089b4;
+//   }
+
+//   .token.function .maybe-class-name {
+//     color: #ce6700;
+//   }
+
+//   .token.function {
+//     color: #ce6700;
+//   }
+
+//   .token.class-name {
+//     color: #c7444a;
+//   }
+
+//   .token.comment,
+//   .token.prolog,
+//   .token.doctype,
+//   .token.operator,
+//   .token.cdata {
+//     color: #393a34;
+//   }
+
+//   .token.punctuation,
+//   .token.attr-name {
+//     color: #d0b344;
+//   }
+
+//   .token.namespace {
+//     opacity: 0.7;
+//   }
+
+//   .token.tag {
+//     color: #6089b4;
+//   }
+
+//   .token.property,
+//   .token.boolean,
+//   .token.number,
+//   .token.constant,
+//   .token.symbol {
+//     color: #6089b4;
+//   }
+
+//   .token.selector,
+//   .token.string,
+//   .token.char,
+//   .token.builtin,
+//   .token.inserted {
+//     color: #9aa83a;
+//   }
+
+//   .token.entity,
+//   .token.url,
+//   .language-css .token.string,
+//   .style .token.string,
+//   .token.variable {
+//     color: #9872a2;
+//   }
+
+//   .token.attr-value {
+//     color: #9aa83a;
+//   }
+
+//   .token.atrule,
+//   .token.keyword {
+//     color: #9872a2;
+//   }
+
+//   .token.regex,
+//   .token.important {
+//     color: #e90;
+//   }
+
+//   .token.important,
+//   .token.bold {
+//     font-weight: bold;
+//   }
+//   .token.italic {
+//     font-style: italic;
+//   }
+
+//   .token.entity {
+//     cursor: help;
+//   }
+
+//   .token.deleted {
+//     color: red;
+//   }
+// `;
+
+// export const prismLightTheme = prismDarkTheme;
+
 const prismBaseTheme = css`
   code {
     white-space: pre;
