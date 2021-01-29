@@ -27,7 +27,10 @@ export const Header = () => {
   const text = useColorModeValue('dark', 'light');
   const SwitchIcon = useColorModeValue(MoonIcon, SunIcon);
   const menuToggle = useColorModeValue('black', 'white');
-  const navToggle = useColorModeValue({ backdropFilter: 'blur(20px)' }, {});
+  const navToggle = useColorModeValue(
+    { backdropFilter: 'blur(20px)' },
+    { backdropFilter: 'blur(120px)' }
+  );
 
   return (
     <>
