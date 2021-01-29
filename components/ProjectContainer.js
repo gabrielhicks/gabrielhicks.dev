@@ -5,10 +5,10 @@ import { Project } from './Project';
 export const ProjectContainer = () => (
   <>
     <Project
-      title="Sanity.io E-commerce Platform"
-      image="/static/projects/sanity.png"
+      title="Jungle to Jungle"
+      image="/static/projects/jungletojungle.png"
       repo="https://github.com/gabrielhicks/next-sanity-ecommerce"
-      description="My current personal project, converting an e-commerce platform into a fun and accessible Chakra themed Next.js store! It is in progress, the link below will show the 'preview' mode of the application displaying real-time updates!"
+      description="My current personal project, converting an e-commerce platform into a fun and accessible Chakra themed Next.js store! It is in progress, and with 'preview' mode of the application you can view me developing in real time!"
       tech={[
         'React',
         'Next.js',
