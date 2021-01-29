@@ -6,6 +6,7 @@ This is the third version of my web development and software engineering portfol
 - [x] Integrated Blog
 - [x] Layouts, Data, Blogs, MDX Components, overall file structure
 - [ ] Styling for all blogs
+- [ ] Custom Prism.js to match my IDE theme
 
 ## Anatomy
 
