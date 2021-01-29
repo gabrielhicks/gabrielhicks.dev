@@ -8,7 +8,7 @@ export const ProjectContainer = () => (
       title="Sanity.io E-commerce Platform"
       image="/static/projects/sanity.png"
       repo="https://github.com/gabrielhicks/next-sanity-ecommerce"
-      description="My current project, converting an e-commerce platform into a fun and accessible Chakra themed Next.js store! It is in progress, the link below will show the 'preview' mode of the application displaying real-time updates!"
+      description="My current personal project, converting an e-commerce platform into a fun and accessible Chakra themed Next.js store! It is in progress, the link below will show the 'preview' mode of the application displaying real-time updates!"
       tech={[
         'React',
         'Next.js',
