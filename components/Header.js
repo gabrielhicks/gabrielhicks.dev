@@ -30,8 +30,7 @@ export const Header = () => {
   const navToggle = useColorModeValue(
     { backdropFilter: 'blur(20px)' },
     {
-      backdropFilter: 'blur(20px)',
-      backgroundColor: 'rgba(23,25,35,0.75)'
+      backdropFilter: 'blur(20px)'
     }
   );
 
