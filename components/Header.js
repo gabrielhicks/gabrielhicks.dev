@@ -27,31 +27,19 @@ export const Header = () => {
   const text = useColorModeValue('dark', 'light');
   const SwitchIcon = useColorModeValue(MoonIcon, SunIcon);
   const menuToggle = useColorModeValue('black', 'white');
-  const navToggle = useColorModeValue(
-    { backdropFilter: 'blur(20px)' },
-    {
-      backdropFilter: 'blur(20px)'
-    }
-  );
 
   return (
     <>
-      {/* <IconButton
-        position="fixed"
-        top="1rem"
-        right="1rem"
-        aria-label={`Switch to ${text} mode`}
-        variant="ghost"
-        onClick={toggleMode}
-        icon={<SwitchIcon />}
-      /> */}
       <Stack
         as="nav"
         height="4.5rem"
         zIndex="10"
         width="100%"
         position="fixed"
-        style={navToggle}
+        style={{
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)'
+        }}
       >
         <Stack
           direction="row"
