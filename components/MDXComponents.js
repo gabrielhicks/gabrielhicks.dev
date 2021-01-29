@@ -46,6 +46,7 @@ const MDXComponents = {
   Code,
   Text,
   Paragraph: CustomParagraph,
+  p: CustomParagraph,
   Heading: CustomHeading,
   Badge,
   Divider,

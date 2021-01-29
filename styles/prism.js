@@ -222,11 +222,14 @@ const prismBaseTheme = css`
     border-radius: ${theme.radii.lg};
   }
   /* Inline code */
-  :not(pre) > code[class*='language-'] {
+  :not(pre) > code {
     padding: 0.1em;
     border-radius: 0.3em;
     white-space: normal;
+    border: 1px solid ${theme.colors.gray[200]};
+    border-radius: ${theme.radii.lg};
   }
+
   .token.comment,
   .token.prolog,
   .token.doctype,
@@ -319,6 +322,7 @@ const prismBaseTheme = css`
 
 export const prismLightTheme = css`
   ${prismBaseTheme};
+
   code[class*='language-'],
   pre[class*='language-'] {
     color: ${theme.colors.gray[800]};
