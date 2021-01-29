@@ -5,6 +5,23 @@ import { Project } from './Project';
 export const ProjectContainer = () => (
   <>
     <Project
+      title="Sanity.io E-commerce Platform"
+      image="/static/projects/sanity.png"
+      repo="https://github.com/gabrielhicks/next-sanity-ecommerce"
+      description="My current project, converting an e-commerce platform into a fun and accessible Chakra themed Next.js store! It is in progress, the link below will show the 'preview' mode of the application displaying real-time updates!"
+      tech={[
+        'React',
+        'Next.js',
+        'Chakra-UI',
+        'Sanity.io',
+        'Tailwind',
+        'HTML',
+        'CSS'
+      ]}
+      website="https://next-sanity-ecommerce-chi.vercel.app/?preview"
+    />
+
+    <Project
       image="/static/projects/tutorialheaven.png"
       website="https://tutorial-heaven.netlify.app/"
       title="Tutorial Heaven"
@@ -134,7 +151,7 @@ export const ProjectContainer = () => (
       title="Personal Portfolio v2"
       image="/static/projects/portfoliov2.png"
       repo="https://github.com/gabrielhicks/gabrielhicks.dev"
-      description="The first iteration of my personal portfolio"
+      description="This is the current state of my portfolio and I have put a lot of time, commits, and effort into having a fun playground to experiement with new technologies. I most recently developed the blog!"
       tech={[
         'React',
         'Next.js',
