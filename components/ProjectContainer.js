@@ -133,7 +133,7 @@ export const ProjectContainer = () => (
     <Project
       title="Personal Portfolio v2"
       image="/static/projects/portfoliov2.png"
-      repo="https://github.com/gabrielhicks/portfolio"
+      repo="https://github.com/gabrielhicks/gabrielhicks.dev"
       description="The first iteration of my personal portfolio"
       tech={[
         'React',
