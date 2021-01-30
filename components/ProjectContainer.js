@@ -6,7 +6,7 @@ export const ProjectContainer = () => (
   <>
     <Project
       title="Jungle to Jungle"
-      image="/static/projects/jungletojungle.jpg"
+      image="/static/projects/jungletojungle.png"
       repo="https://github.com/gabrielhicks/next-sanity-ecommerce"
       description="My current personal project, converting rPlants into a scalable and lighter-weight Sanity.io and Next.js site."
       tech={[
