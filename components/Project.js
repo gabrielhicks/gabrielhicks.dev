@@ -30,7 +30,7 @@ export const Project = ({
         borderRadius="md"
         overflow="hidden"
       >
-        <Image width={3360} height={1864} src={image} alt={title} />
+        <Image width={1680} height={932} src={image} alt={title} />
         <Box
           d="flex"
           my="2"
