@@ -6,7 +6,7 @@ export const ProjectContainer = () => (
   <>
     <Project
       title="Jungle to Jungle"
-      image="/static/projects/jungletojungle.png"
+      image="/static/projects/jungletojungle.jpg"
       repo="https://github.com/gabrielhicks/next-sanity-ecommerce"
       description="My current personal project, converting rPlants into a scalable and lighter-weight Sanity.io and Next.js site."
       tech={[
@@ -22,7 +22,7 @@ export const ProjectContainer = () => (
     />
 
     <Project
-      image="/static/projects/tutorialheaven.png"
+      image="/static/projects/tutorialheaven.jpg"
       website="https://tutorial-heaven.netlify.app/"
       title="Tutorial Heaven"
       video="https://youtu.be/H87iCP8XYHU"
@@ -45,7 +45,7 @@ export const ProjectContainer = () => (
     />
 
     <Project
-      image="/static/projects/rplants.png"
+      image="/static/projects/rplants.jpg"
       website="https://rplants.netlify.app/"
       title="rPlants"
       video="https://youtu.be/U8aKwmJFAq4"
@@ -68,7 +68,7 @@ export const ProjectContainer = () => (
     />
     <Project
       title="Synthwave"
-      image="/static/projects/synthwave.png"
+      image="/static/projects/synthwave.jpg"
       website="https://synthwavejs.herokuapp.com/"
       video="https://youtu.be/HsbjB8s-tSU"
       frontend="https://github.com/gabrielhicks/synthwave-frontend"
@@ -88,7 +88,7 @@ export const ProjectContainer = () => (
 
     <Project
       title="YouPlay"
-      image="/static/projects/youplay.png"
+      image="/static/projects/youplay.jpg"
       video="https://youtu.be/w7D92edjc4I"
       repo="https://github.com/gabrielhicks/YouPlay_postgreSQL"
       description="Ruby on Rails application that allows a user to search for their favorite videos online"
@@ -105,7 +105,7 @@ export const ProjectContainer = () => (
     />
     <Project
       title="Literally Just Vibing"
-      image="/static/projects/vibing.png"
+      image="/static/projects/vibing.jpg"
       repo="https://github.com/gabrielhicks/literallyjustvibing"
       description="A Ruby CLI application that generates playlists based off a users mood via Spotify API and data analysis by Michael Nuzzolo"
       tech={['Ruby', 'Spotify API']}
@@ -113,7 +113,7 @@ export const ProjectContainer = () => (
 
     <Project
       title="Spicy Green Book (contributed)"
-      image="/static/projects/sgb.png"
+      image="/static/projects/sgb.jpg"
       repo="https://github.com/spicygreenbook/greenbook-app"
       description="An open source directory of local black-owned businesses that users can find to support"
       tech={['React', 'React Native', 'HTML', 'CSS', 'Open Source']}
@@ -122,7 +122,7 @@ export const ProjectContainer = () => (
 
     <Project
       title="The Sylar Project (contributed)"
-      image="/static/projects/sylar.png"
+      image="/static/projects/sylar.jpg"
       repo="https://github.com/Rahat-ch/The_Sylar_Project"
       description="A NextJS open source project with the goal to help people locate mental health resources quickly in their local area."
       tech={['NextJS', 'React', 'Node', 'HTML', 'CSS', 'Open Source']}
@@ -131,7 +131,7 @@ export const ProjectContainer = () => (
 
     <Project
       title="Flask Store (contributed)"
-      image="/static/projects/hacktober.png"
+      image="/static/projects/hacktober.jpg"
       repo="https://github.com/gabrielhicks/flask-online-store"
       description="A Python / Flask open source e-commerce store management and order placing system created for Hacktoberfest"
       tech={['Python', 'SQLAlchemy', 'Flask', 'OAuth', 'Open Source']}
@@ -140,7 +140,7 @@ export const ProjectContainer = () => (
 
     <Project
       title="O-FISH (contributed)"
-      image="/static/projects/hacktober.png"
+      image="/static/projects/hacktober.jpg"
       repo="https://github.com/gabrielhicks/wildaid.github.io"
       description="O-FISH is an open source multi-platform application that enables officers to browse and record boarding report data from their mobile devices"
       tech={['HTML', 'Open Source']}
@@ -149,7 +149,7 @@ export const ProjectContainer = () => (
 
     <Project
       title="Personal Portfolio v2"
-      image="/static/projects/portfoliov2.png"
+      image="/static/projects/portfoliov2.jpg"
       repo="https://github.com/gabrielhicks/gabrielhicks.dev"
       description="This is the current state of my portfolio. It serves as my sandbox where I can try out and implement new technologies."
       tech={[
@@ -169,7 +169,7 @@ export const ProjectContainer = () => (
 
     <Project
       title="Personal Portfolio"
-      image="/static/projects/portfoliov1.png"
+      image="/static/projects/portfoliov1.jpg"
       repo="https://github.com/gabrielhicks/portfolio"
       description="The first iteration of my personal portfolio"
       tech={['React', 'Redux', 'HTML', 'CSS', 'styled-components']}
