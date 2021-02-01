@@ -18,7 +18,7 @@ export const ProjectContainer = () => (
         'HTML',
         'CSS'
       ]}
-      website="https://next-sanity-ecommerce-chi.vercel.app/?preview"
+      website="https://next-sanity-ecommerce-chi.vercel.app/"
     />
 
     <Project
@@ -151,7 +151,7 @@ export const ProjectContainer = () => (
       title="Personal Portfolio v2"
       image="/static/projects/portfoliov2.png"
       repo="https://github.com/gabrielhicks/gabrielhicks.dev"
-      description="This is the current state of my portfolio and I have put a lot of time, commits, and effort into having a fun playground to experiement with new technologies. I most recently developed the blog!"
+      description="This is the current state of my portfolio. It serves as my sandbox where I can try out and implement new technologies."
       tech={[
         'React',
         'Next.js',
