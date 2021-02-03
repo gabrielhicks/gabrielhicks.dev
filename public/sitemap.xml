@@ -9,6 +9,48 @@
   </url>
 
   <url>
-    <loc>https://gabrielhicks.dev/blog/[slug]</loc>
+    <loc
+      >https://gabrielhicks.dev/blog/adding-html-content-in-rails-using-jquery</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://gabrielhicks.dev/blog/anatomy-of-a-singly-linked-list-in-js</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://gabrielhicks.dev/blog/become-an-open-source-contributor</loc>
+  </url>
+
+  <url>
+    <loc>https://gabrielhicks.dev/blog/chasing-dreams-during-a-pandemic</loc>
+  </url>
+
+  <url>
+    <loc>https://gabrielhicks.dev/blog/cra-vs-gatsby-vs-next</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://gabrielhicks.dev/blog/how-to-access-spotify-api-ruby-restclient-json</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://gabrielhicks.dev/blog/networking-after-coding-bootcamp</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://gabrielhicks.dev/blog/stacks-queues-and-linked-lists-in-js</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://gabrielhicks.dev/blog/start-testing-your-react-applications</loc
+    >
   </url>
 </urlset>
