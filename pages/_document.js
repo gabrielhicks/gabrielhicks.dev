@@ -22,23 +22,23 @@ export default class Document extends NextDocument {
             content="Pp_AlJMcynTuCnFnUOlynldmgPukRP_AY5lxl6N1qPM"
             name="google-site-verification"
           />
-          <link rel="shortcut icon" href="/static/favicons/favicon.ico?v=2" />
+          <link rel="shortcut icon" href="/favicon.ico" />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/static/favicons/apple-touch-icon.png?v=2"
+            href="/static/favicons/apple-touch-icon.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="/static/favicons/favicon-32x32.png?v=2"
+            href="/static/favicons/favicon-32x32.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="/static/favicons/favicon-16x16.png?v=2"
+            href="/static/favicons/favicon-16x16.png"
           />
           <link rel="manifest" href="/static/favicons/site.webmanifest" />
           <link
