@@ -6,10 +6,12 @@ import {
 } from '@chakra-ui/react';
 import { MDXProvider } from '@mdx-js/react';
 import { Global, css } from '@emotion/react';
+// import Router from 'next/router';
 
 import MDXComponents from '../components/MDXComponents';
 import theme from '../theme';
 import { prismLightTheme, prismDarkTheme } from '../styles/prism';
+// import * as gtag from '../lib/gtag';
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -25,6 +27,8 @@ const GlobalStyle = ({ children }) => {
     </>
   );
 };
+
+// Router.events.on('routeChangeComplete', (url) => gtag.pageview(url));
 
 const MyApp = ({ Component, pageProps }) => {
   return (

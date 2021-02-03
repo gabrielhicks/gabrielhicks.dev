@@ -18,7 +18,7 @@ export default async (_, res) => {
 
   const analytics = google.analytics({
     auth,
-    version: 'v3'
+    version: 'v4'
   });
 
   const startDate = req.query.startDate;
