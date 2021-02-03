@@ -31,8 +31,8 @@ export default class Document extends NextDocument {
           <meta name="msapplication-TileColor" content="#ffc40d" />
           <meta name="theme-color" content="#ffffff" />
           <meta
-            content="Pp_AlJMcynTuCnFnUOlynldmgPukRP_AY5lxl6N1qPM"
             name="google-site-verification"
+            content="CGNWZAaIZRZMwDbjxZa8poGnOkax1lxdQ3DNzdRKnUo"
           />
           <link
             rel="shortcut icon"
