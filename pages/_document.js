@@ -22,7 +22,7 @@ export default class Document extends NextDocument {
             content="Pp_AlJMcynTuCnFnUOlynldmgPukRP_AY5lxl6N1qPM"
             name="google-site-verification"
           />
-          <link rel="shortcut icon" href="/favicon.ico" />
+          <link rel="shortcut icon" type="image/x-icon" href="/static/favicons/favicon.ico" />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
