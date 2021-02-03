@@ -5,8 +5,6 @@ import React from 'react';
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
 import { ColorModeScript } from '@chakra-ui/react';
 
-import { GA_TRACKING_ID } from '../lib/gtag';
-
 export default class Document extends NextDocument {
   render() {
     return (
@@ -14,21 +12,21 @@ export default class Document extends NextDocument {
         <Head>
           <script
             async
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+            src={`https://www.googletagmanager.com/gtag/js?id=G-2FHE2V2W9T`}
           />
-          {/* <script
+          <script
             dangerouslySetInnerHTML={{
               __html: `
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
 
-                    gtag('config', '${GA_TRACKING_ID}', {
+                    gtag('config', 'G-2FHE2V2W9T', {
                       page_path: window.location.pathname,
                     });
                   `
             }}
-          /> */}
+          />
           <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
           <meta name="msapplication-TileColor" content="#ffc40d" />
           <meta name="theme-color" content="#ffffff" />
