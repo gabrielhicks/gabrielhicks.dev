@@ -7,6 +7,7 @@ export const ProjectContainer = () => (
     <Project
       title="Jungle to Jungle"
       image="/static/projects/jungletojungle.jpg"
+      priority
       repo="https://github.com/gabrielhicks/next-sanity-ecommerce"
       description="My current personal project, converting rPlants into a scalable and lighter-weight Sanity.io and Next.js site."
       tech={[
@@ -22,6 +23,7 @@ export const ProjectContainer = () => (
     />
 
     <Project
+      priority={false}
       image="/static/projects/tutorialheaven.jpg"
       website="https://tutorial-heaven.netlify.app/"
       title="Tutorial Heaven"
@@ -45,6 +47,7 @@ export const ProjectContainer = () => (
     />
 
     <Project
+      priority={false}
       image="/static/projects/rplants.jpg"
       website="https://rplants.netlify.app/"
       title="rPlants"
@@ -67,6 +70,7 @@ export const ProjectContainer = () => (
       ]}
     />
     <Project
+      priority={false}
       title="Synthwave"
       image="/static/projects/synthwave.jpg"
       website="https://synthwavejs.herokuapp.com/"
@@ -87,6 +91,7 @@ export const ProjectContainer = () => (
     />
 
     <Project
+      priority={false}
       title="YouPlay"
       image="/static/projects/youplay.jpg"
       video="https://youtu.be/w7D92edjc4I"
@@ -104,6 +109,7 @@ export const ProjectContainer = () => (
       website="https://you-play-heroku.herokuapp.com/"
     />
     <Project
+      priority={false}
       title="Literally Just Vibing"
       image="/static/projects/vibing.jpg"
       repo="https://github.com/gabrielhicks/literallyjustvibing"
@@ -112,6 +118,7 @@ export const ProjectContainer = () => (
     />
 
     <Project
+      priority={false}
       title="Spicy Green Book (contributed)"
       image="/static/projects/sgb.jpg"
       repo="https://github.com/spicygreenbook/greenbook-app"
@@ -121,6 +128,7 @@ export const ProjectContainer = () => (
     />
 
     <Project
+      priority={false}
       title="The Sylar Project (contributed)"
       image="/static/projects/sylar.jpg"
       repo="https://github.com/Rahat-ch/The_Sylar_Project"
@@ -130,6 +138,7 @@ export const ProjectContainer = () => (
     />
 
     <Project
+      priority={false}
       title="Flask Store (contributed)"
       image="/static/projects/hacktober.jpg"
       repo="https://github.com/gabrielhicks/flask-online-store"
@@ -139,6 +148,7 @@ export const ProjectContainer = () => (
     />
 
     <Project
+      priority={false}
       title="O-FISH (contributed)"
       image="/static/projects/hacktober.jpg"
       repo="https://github.com/gabrielhicks/wildaid.github.io"
@@ -148,6 +158,7 @@ export const ProjectContainer = () => (
     />
 
     <Project
+      priority={false}
       title="Personal Portfolio v2"
       image="/static/projects/portfoliov2.jpg"
       repo="https://github.com/gabrielhicks/gabrielhicks.dev"
@@ -168,6 +179,7 @@ export const ProjectContainer = () => (
     />
 
     <Project
+      priority={false}
       title="Personal Portfolio"
       image="/static/projects/portfoliov1.jpg"
       repo="https://github.com/gabrielhicks/portfolio"

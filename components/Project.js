@@ -18,7 +18,8 @@ export const Project = ({
   repo,
   tech,
   description,
-  website
+  website,
+  priority
 }) => {
   return (
     <>
@@ -30,7 +31,13 @@ export const Project = ({
         borderRadius="md"
         overflow="hidden"
       >
-        <Image width={1680} height={932} src={image} alt={title} />
+        <Image
+          priority={priority}
+          width={1680}
+          height={932}
+          src={image}
+          alt={title}
+        />
         <Box
           d="flex"
           my="2"
