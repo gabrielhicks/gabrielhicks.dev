@@ -1,5 +1,6 @@
 /* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable react/no-danger */
+
 import React from 'react';
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
 import { ColorModeScript } from '@chakra-ui/react';
@@ -15,6 +16,18 @@ export default class Document extends NextDocument {
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
           />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `
+            }}
+          />
           <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
           <meta name="msapplication-TileColor" content="#ffc40d" />
           <meta name="theme-color" content="#ffffff" />
@@ -22,7 +35,11 @@ export default class Document extends NextDocument {
             content="Pp_AlJMcynTuCnFnUOlynldmgPukRP_AY5lxl6N1qPM"
             name="google-site-verification"
           />
-          <link rel="shortcut icon" type="image/x-icon" href="/static/favicons/favicon.ico" />
+          <link
+            rel="shortcut icon"
+            type="image/x-icon"
+            href="/static/favicons/favicon.ico"
+          />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
