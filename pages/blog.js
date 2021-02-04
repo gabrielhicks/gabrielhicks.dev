@@ -16,7 +16,7 @@ export default function Blog({ posts }) {
 
   return (
     <Container
-      title="Gabriel Hicks | Blog"
+      title="Blog - Gabriel Hicks"
       description="A collection of thoughts surrounding software development, new technologies, and life experience."
       height="100%"
     >

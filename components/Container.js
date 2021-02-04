@@ -18,7 +18,7 @@ export const Container = (props) => {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: 'Gabriel Hicks | Software Engineer, Web Developer',
+    title: 'Gabriel Hicks - Software Engineer, Full Stack Developer',
     description:
       'Gabriel Hicks is a software engineer who specializes in building applications and websites using the latest technologies.',
     image: 'https://gabrielhicks.dev/og.png',
