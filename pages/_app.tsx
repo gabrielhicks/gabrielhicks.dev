@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
+import { AppProps } from 'next/app';
 import {
   ChakraProvider,
   ColorModeProvider,
@@ -11,7 +12,11 @@ import MDXComponents from '../components/MDXComponents';
 import theme from '../theme';
 import { prismLightTheme, prismDarkTheme } from '../styles/prism';
 
-const GlobalStyle = ({ children }) => {
+interface ChakraProps {
+  children: ReactNode;
+}
+
+const GlobalStyle = ({ children }: ChakraProps) => {
   const { colorMode } = useColorMode();
 
   return (
@@ -26,7 +31,7 @@ const GlobalStyle = ({ children }) => {
   );
 };
 
-const MyApp = ({ Component, pageProps }) => {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <ChakraProvider resetCSS theme={theme}>
       <ColorModeProvider
