@@ -1,12 +1,10 @@
-/* eslint-disable eslint-comments/disable-enable-pair */
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-sync */
 /* eslint-disable require-await */
-/* eslint-disable get-off-my-lawn/prefer-arrow-functions */
 import fs from 'fs';
 import path from 'path';
 
 import matter from 'gray-matter';
-import mdxPrism from 'mdx-prism';
 import readingTime from 'reading-time';
 import renderToString from 'next-mdx-remote/render-to-string';
 
@@ -14,11 +12,13 @@ import MDXComponents from '../components/MDXComponents';
 
 const root = process.cwd();
 
-export async function getFiles(type) {
+export async function getFiles(type: string) {
   return fs.readdirSync(path.join(root, 'data', type));
 }
 
-export async function getFileBySlug(type, slug) {
+export async function getFileBySlug(type: string, slug: string) {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const mdxPrism = require('mdx-prism');
   const source = slug
     ? fs.readFileSync(path.join(root, 'data', type, `${slug}.mdx`), 'utf8')
     : fs.readFileSync(path.join(root, 'data', `${type}.mdx`), 'utf8');
@@ -47,16 +47,27 @@ export async function getFileBySlug(type, slug) {
   };
 }
 
-export async function getAllFilesFrontMatter(type) {
+interface AllPosts {
+  [index: number]: {
+    title: string;
+    publishedAt: string;
+    summary: string;
+    image: string;
+    slug: string;
+  };
+}
+
+export async function getAllFilesFrontMatter(type: string) {
   const files = fs.readdirSync(path.join(root, 'data', type));
 
-  return files.reduce((allPosts, postSlug) => {
+  return files.reduce((allPosts: AllPosts[], postSlug: string) => {
     const source = fs.readFileSync(
       path.join(root, 'data', type, postSlug),
       'utf8'
     );
     const { data } = matter(source);
 
+    console.log(allPosts, 'ALLPOSTS');
     return [
       {
         ...data,
