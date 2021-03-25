@@ -7,11 +7,12 @@ import { Header } from './Header';
 
 type Props = {
   children: ReactNode;
-  type: string;
-  description: string;
-  title: string;
-  image: string;
-  date: string;
+  type?: string;
+  description?: string;
+  title?: string;
+  image?: string;
+  date?: string;
+  height?: string;
 };
 
 export const Container = (props: Props) => {

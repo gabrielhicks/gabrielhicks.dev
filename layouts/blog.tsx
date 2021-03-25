@@ -44,7 +44,7 @@ const BlogLayout = ({ children, frontMatter }: LayoutProps) => {
         url={`https://gabrielhicks.dev/blog/${frontMatter.slug}`}
         {...frontMatter}
       />
-      <Main spacing={4} columns={1}>
+      <Main spacing={4} columns={[1]}>
         <Box
           mx="2"
           my="2"
