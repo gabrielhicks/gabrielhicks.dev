@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://gabrielhicks.dev/blog</loc>
-  </url>
-
-  <url>
-    <loc>https://gabrielhicks.dev</loc>
-  </url>
-
-  <url>
     <loc
       >https://gabrielhicks.dev/blog/adding-html-content-in-rails-using-jquery</loc
     >

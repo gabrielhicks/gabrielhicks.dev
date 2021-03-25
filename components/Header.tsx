@@ -9,7 +9,7 @@ import {
   IconButton,
   Button,
   Stack,
-  ChakraLink as Link,
+  Link,
   MenuDivider,
   MenuGroup
 } from '@chakra-ui/react';
@@ -70,9 +70,8 @@ export const Header = () => {
             <MenuList color={menuToggle}>
               <MenuGroup title="Social">
                 <MenuItem
-                  component={Link}
-                  as="a"
-                  alt="Opens in a new window"
+                  as={Link}
+                  alt="Opens LinkedIn in a new window"
                   target="_blank"
                   rel="noreferrer"
                   href={'https://www.linkedin.com/in/gabrieljhicks/'}
@@ -81,9 +80,8 @@ export const Header = () => {
                   LinkedIn
                 </MenuItem>
                 <MenuItem
-                  component={Link}
-                  as="a"
-                  alt="Opens in a new window"
+                  as={Link}
+                  alt="Opens GitHub in a new window"
                   target="_blank"
                   rel="noreferrer"
                   href={'https://github.com/gabrielhicks/'}
@@ -92,9 +90,8 @@ export const Header = () => {
                   GitHub
                 </MenuItem>
                 <MenuItem
-                  component={Link}
-                  as="a"
-                  alt="Opens in a new window"
+                  as={Link}
+                  alt="Opens Twitter in a new window"
                   target="_blank"
                   rel="noreferrer"
                   href={'https://twitter.com/gabrielhicksdev'}
@@ -106,9 +103,8 @@ export const Header = () => {
               <MenuDivider />
               <MenuGroup title="Contact">
                 <MenuItem
-                  component={Link}
-                  as="a"
-                  alt="Opens in a new window"
+                  as={Link}
+                  alt="Opens Resume in a new window"
                   target="_blank"
                   rel="noreferrer"
                   href={'https://gabrielhicks.dev/HicksResume.pdf'}
@@ -117,9 +113,8 @@ export const Header = () => {
                   Resume
                 </MenuItem>
                 <MenuItem
-                  component={Link}
-                  as="a"
-                  alt="Opens in a new window"
+                  as={Link}
+                  alt="Opens Email in a new window"
                   target="_blank"
                   rel="noreferrer"
                   href={'mailto:me@gabrielhicks.dev'}

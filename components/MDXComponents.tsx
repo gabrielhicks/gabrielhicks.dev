@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import NextLink from 'next/link';
 import Image from 'next/image';
 import {
@@ -17,17 +17,26 @@ import {
 import { MediumDivider as Divider } from './mdx/MediumDivider';
 import { BlockQuote } from './mdx/BlockQuote';
 
-const CustomHeading = (props) => (
+type Props = {
+  children: ReactNode;
+};
+
+type PropsHref = {
+  children: ReactNode;
+  href: string;
+};
+
+const CustomHeading = (props: Props) => (
   <Heading size="lg" as="h3" pb={2} {...props} />
 );
 
-const CustomParagraph = (props) => (
+const CustomParagraph = (props: Props) => (
   <Text fontSize="lg" as="p" mt={4} {...props} />
 );
 
-const CustomLink = (props) => {
+const CustomLink = (props: PropsHref) => {
   const href = props.href;
-  const isInternalLink = href && href.startsWith('/');
+  const isInternalLink = href.startsWith('/');
 
   if (isInternalLink) {
     return (

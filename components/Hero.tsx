@@ -1,7 +1,12 @@
 import React from 'react';
 import { Flex, Heading, Grid } from '@chakra-ui/react';
 
-const Hero = ({ title, subtitle }) => (
+type Props = {
+  title: string;
+  subtitle: string;
+};
+
+const Hero = ({ title, subtitle }: Props) => (
   <Flex
     textAlign="center"
     justifyContent="center"

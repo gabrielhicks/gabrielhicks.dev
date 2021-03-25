@@ -1,7 +1,11 @@
 import { Box } from '@chakra-ui/react';
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-export const BlockQuote = (props) => {
+type Props = {
+  children: ReactNode;
+};
+
+export const BlockQuote = (props: Props) => {
   return (
     <Box
       as="blockquote"

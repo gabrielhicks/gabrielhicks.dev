@@ -1,29 +1,34 @@
-/* eslint-disable eslint-comments/disable-enable-pair */
-/* eslint-disable objects/no-object-properties-first-line */
-/* eslint-disable objects/no-object-properties-last-line */
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Flex, useColorMode } from '@chakra-ui/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import { Header } from './Header';
 
-export const Container = (props) => {
+type Props = {
+  children: ReactNode;
+  type?: string;
+  description?: string;
+  title?: string;
+  image?: string;
+  date?: string;
+  height?: string;
+};
+
+export const Container = (props: Props) => {
   const { colorMode } = useColorMode();
 
   const bgColor = { light: 'gray.50', dark: 'gray.900' };
 
   const color = { light: 'black', dark: 'white' };
 
-  const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
     title: 'Gabriel Hicks - Software Engineer, Full Stack Developer',
     description:
       'Gabriel Hicks is a software engineer who specializes in building applications and websites using the latest technologies.',
     image: 'https://gabrielhicks.dev/og.png',
-    type: 'website',
-    ...customMeta
+    type: 'website'
   };
 
   return (
@@ -46,9 +51,9 @@ export const Container = (props) => {
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
-        {meta.date && (
+        {/* {meta.date && (
           <meta property="article:published_time" content={meta.date} />
-        )}
+        )} */}
       </Head>
       <Header />
       <Flex

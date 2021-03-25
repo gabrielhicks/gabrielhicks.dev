@@ -1,12 +1,30 @@
 import React from 'react';
 import { NextSeo, ArticleJsonLd } from 'next-seo';
 
-const BlogSeo = ({ title, summary, publishedAt, url, image }) => {
+type Props = {
+  title: string;
+  summary: string;
+  publishedAt: string;
+  url: string;
+  image: string;
+  slug: string;
+};
+
+type Featured = {
+  url: string;
+  alt: string;
+};
+
+const BlogSeo = ({ title, summary, publishedAt, url, image }: Props) => {
   const date = new Date(publishedAt).toISOString();
-  const featuredImage = {
+  const featuredImage: Featured = {
     url: `https://gabrielhicks.dev${image}`,
     alt: title
   };
+
+  const stringImages: ReadonlyArray<string> = [
+    `https://gabrielhicks.dev${image}, ${title}`
+  ];
 
   return (
     <>
@@ -30,7 +48,7 @@ const BlogSeo = ({ title, summary, publishedAt, url, image }) => {
         dateModified={date}
         datePublished={date}
         description={summary}
-        images={[featuredImage]}
+        images={stringImages}
         publisherLogo="/public/favicons/android-chrome-192x192.png"
         publisherName="Gabriel Hicks"
         title={title}

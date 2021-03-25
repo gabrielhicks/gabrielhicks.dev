@@ -1,13 +1,19 @@
 import React from 'react';
 import Image from 'next/image';
-import {
-  Box,
-  Badge,
-  Button,
-  Divider,
-  ChakraLink as Link
-} from '@chakra-ui/react';
+import { Box, Badge, Button, Divider, Link } from '@chakra-ui/react';
 import { Airplayvideo, Youtube, Github } from '@icons-pack/react-simple-icons';
+
+type Props = {
+  image: string;
+  title: string;
+  video: boolean | string;
+  frontend: boolean | string;
+  backend: boolean | string;
+  repo: boolean | string;
+  tech: string[];
+  description: string;
+  website: boolean | string;
+};
 
 export const Project = ({
   image,
@@ -19,7 +25,7 @@ export const Project = ({
   tech,
   description,
   website
-}) => {
+}: Props) => {
   return (
     <>
       <Box
@@ -43,8 +49,7 @@ export const Project = ({
               colorScheme="gray"
               alt="Opens in a new window"
               leftIcon={<Youtube />}
-              component={Link}
-              as="a"
+              as={Link}
               target="_blank"
               rel="noreferrer"
               href={video}
@@ -58,8 +63,7 @@ export const Project = ({
               colorScheme="gray"
               alt="Opens in a new window"
               leftIcon={<Airplayvideo />}
-              component={Link}
-              as="a"
+              as={Link}
               target="_blank"
               rel="noreferrer"
               href={website}
@@ -73,8 +77,7 @@ export const Project = ({
               colorScheme="gray"
               alt="Opens in a new window"
               leftIcon={<Github />}
-              component={Link}
-              as="a"
+              as={Link}
               target="_blank"
               rel="noreferrer"
               href={frontend}
@@ -88,8 +91,7 @@ export const Project = ({
               colorScheme="gray"
               alt="Opens in a new window"
               leftIcon={<Github />}
-              component={Link}
-              as="a"
+              as={Link}
               target="_blank"
               rel="noreferrer"
               href={backend}
@@ -103,8 +105,7 @@ export const Project = ({
               colorScheme="gray"
               alt="Opens in a new window"
               leftIcon={<Github />}
-              component={Link}
-              as="a"
+              as={Link}
               target="_blank"
               rel="noreferrer"
               href={repo}
@@ -121,7 +122,7 @@ export const Project = ({
           </Box>
 
           <Box d="flex-end" pb="2" alignItems="baseline">
-            {tech.map((each) => (
+            {tech.map((each: string) => (
               <Badge
                 key={each}
                 borderRadius="full"

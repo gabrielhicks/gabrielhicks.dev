@@ -8,9 +8,9 @@ import {
 } from '@icons-pack/react-simple-icons';
 import { Flex, Link, HStack } from '@chakra-ui/react';
 
-export const Footer = (props) => (
+export const Footer = () => (
   <>
-    <Flex as="footer" pb="4rem" pt="12rem" {...props}>
+    <Flex as="footer" pb="4rem" pt="12rem">
       <HStack spacing="2em">
         <Link href="https://www.github.com/gabrielhicks/" isExternal>
           <Github size="2em" />

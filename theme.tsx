@@ -1,7 +1,4 @@
-// eslint-disable-next-line eslint-comments/disable-enable-pair
-/* eslint-disable node/no-extraneous-import */
 import { extendTheme } from '@chakra-ui/react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { createBreakpoints } from '@chakra-ui/theme-tools';
 
 const fonts = { mono: `'Menlo', monospace` };
