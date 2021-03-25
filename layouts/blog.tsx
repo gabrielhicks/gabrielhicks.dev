@@ -1,5 +1,3 @@
-/* eslint-disable eslint-comments/disable-enable-pair */
-/* eslint-disable get-off-my-lawn/prefer-arrow-functions */
 import React from 'react';
 // import Image from 'next/image';
 import { parseISO, format } from 'date-fns';

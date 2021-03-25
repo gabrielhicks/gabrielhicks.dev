@@ -67,7 +67,6 @@ export async function getAllFilesFrontMatter(type: string) {
     );
     const { data } = matter(source);
 
-    console.log(allPosts, 'ALLPOSTS');
     return [
       {
         ...data,

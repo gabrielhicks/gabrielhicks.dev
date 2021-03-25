@@ -13,10 +13,10 @@ interface Source {
 interface Matter {
   wordCount: number;
   readingTime: {
-    text: '15 min read';
-    minutes: 14.295;
-    time: 857700;
-    words: 2859;
+    text: string;
+    minutes: number;
+    time: number;
+    words: number;
   };
   slug: string;
   title: string;

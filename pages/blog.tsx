@@ -1,5 +1,3 @@
-/* eslint-disable eslint-comments/disable-enable-pair */
-/* eslint-disable get-off-my-lawn/prefer-arrow-functions */
 import React from 'react';
 
 import { Container } from '../components/Container';
@@ -9,10 +7,37 @@ import Hero from '../components/Hero';
 import { Footer } from '../components/Footer';
 import { Main } from '../components/Main';
 
-export default function Blog({ posts }) {
-  const blogPosts = posts.sort(
-    (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
-  );
+interface Post {
+  title: string;
+  publishedAt: string;
+  summary: string;
+  image: string;
+  slug: string;
+}
+
+interface AllPosts {
+  sort(byDateDesc: (a: Post, b: Post) => number): AllPosts[];
+  title: string;
+  publishedAt: string;
+  summary: string;
+  image: string;
+  slug: string;
+}
+
+interface BlogProps {
+  posts: AllPosts;
+}
+
+export default function Blog({ posts }: BlogProps) {
+  console.log(posts, 'THIS IS THE POSTS');
+
+  function byDateDesc(a: Post, b: Post) {
+    const bTime = new Date(b.publishedAt).getTime();
+    const aTime = new Date(a.publishedAt).getTime();
+
+    return bTime - aTime;
+  }
+  const blogPosts: AllPosts[] = posts.sort(byDateDesc);
 
   return (
     <Container
