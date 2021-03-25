@@ -29,8 +29,6 @@ interface BlogProps {
 }
 
 export default function Blog({ posts }: BlogProps) {
-  console.log(posts, 'THIS IS THE POSTS');
-
   function byDateDesc(a: Post, b: Post) {
     const bTime = new Date(b.publishedAt).getTime();
     const aTime = new Date(a.publishedAt).getTime();

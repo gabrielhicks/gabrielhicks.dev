@@ -4,7 +4,14 @@ import Link from 'next/link';
 import { Box, Divider, Grid } from '@chakra-ui/react';
 import { parseISO, format } from 'date-fns';
 
-const BlogPost = ({ title, summary, publishedAt, slug }) => {
+type Props = {
+  title: string;
+  summary: string;
+  publishedAt: string;
+  slug: string;
+};
+
+const BlogPost = ({ title, summary, publishedAt, slug }: Props) => {
   return (
     <>
       <Grid

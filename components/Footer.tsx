@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import {
   Youtube,
   Github,
@@ -8,7 +8,11 @@ import {
 } from '@icons-pack/react-simple-icons';
 import { Flex, Link, HStack } from '@chakra-ui/react';
 
-export const Footer = (props) => (
+type Props = {
+  children: ReactNode;
+};
+
+export const Footer = (props: Props) => (
   <>
     <Flex as="footer" pb="4rem" pt="12rem" {...props}>
       <HStack spacing="2em">

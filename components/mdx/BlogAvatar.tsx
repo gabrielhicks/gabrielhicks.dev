@@ -1,7 +1,12 @@
 import { Avatar, Flex, Box, Text } from '@chakra-ui/react';
 import React from 'react';
 
-export const BlogAvatar = ({ date, readingTime }) => {
+type Props = {
+  date: string;
+  readingTime: string;
+};
+
+export const BlogAvatar = ({ date, readingTime }: Props) => {
   return (
     <Flex mt="5">
       <Avatar src="/static/avatar.jpg" />

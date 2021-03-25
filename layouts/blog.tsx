@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 // import Image from 'next/image';
 import { parseISO, format } from 'date-fns';
 import { Box } from '@chakra-ui/react';
@@ -10,7 +10,27 @@ import { Footer } from '../components/Footer';
 import BlogSeo from '../components/BlogSeo';
 import { BlogAvatar } from '../components/mdx/BlogAvatar';
 
-export default function BlogLayout({ children, frontMatter }) {
+type BlogMatter = {
+  wordCount: number;
+  readingTime: {
+    text: string;
+    minutes: number;
+    time: number;
+    words: number;
+  };
+  slug: string;
+  title: string;
+  publishedAt: string;
+  summary: string;
+  image: string;
+};
+
+interface LayoutProps {
+  children: ReactNode;
+  frontMatter: BlogMatter;
+}
+
+export default function BlogLayout({ children, frontMatter }: LayoutProps) {
   return (
     <Container
       title={`${frontMatter.title} – Gabriel Hicks`}
