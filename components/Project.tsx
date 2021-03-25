@@ -54,7 +54,7 @@ export const Project = ({
               rel="noreferrer"
               href={video}
             >
-              <a>Video</a>
+              Video
             </Button>
           ) : null}
 
@@ -68,7 +68,7 @@ export const Project = ({
               rel="noreferrer"
               href={website}
             >
-              <a>Live</a>
+              Live
             </Button>
           ) : null}
 
@@ -82,7 +82,7 @@ export const Project = ({
               rel="noreferrer"
               href={frontend}
             >
-              <a>Front</a>
+              Front
             </Button>
           ) : null}
 
@@ -96,7 +96,7 @@ export const Project = ({
               rel="noreferrer"
               href={backend}
             >
-              <a>Back</a>
+              Back
             </Button>
           ) : null}
 
@@ -110,7 +110,7 @@ export const Project = ({
               rel="noreferrer"
               href={repo}
             >
-              <a>Repo</a>
+              Repo
             </Button>
           ) : null}
         </Box>

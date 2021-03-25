@@ -77,7 +77,7 @@ export const Header = () => {
                   href={'https://www.linkedin.com/in/gabrieljhicks/'}
                   icon={<ExternalLinkIcon />}
                 >
-                  <a>LinkedIn</a>
+                  LinkedIn
                 </MenuItem>
                 <MenuItem
                   as={Link}
@@ -87,7 +87,7 @@ export const Header = () => {
                   href={'https://github.com/gabrielhicks/'}
                   icon={<ExternalLinkIcon />}
                 >
-                  <a>GitHub</a>
+                  GitHub
                 </MenuItem>
                 <MenuItem
                   as={Link}
@@ -97,7 +97,7 @@ export const Header = () => {
                   href={'https://twitter.com/gabrielhicksdev'}
                   icon={<ExternalLinkIcon />}
                 >
-                  <a>Twitter</a>
+                  Twitter
                 </MenuItem>
               </MenuGroup>
               <MenuDivider />
@@ -110,7 +110,7 @@ export const Header = () => {
                   href={'https://gabrielhicks.dev/HicksResume.pdf'}
                   icon={<ExternalLinkIcon />}
                 >
-                  <a>Resume</a>
+                  Resume
                 </MenuItem>
                 <MenuItem
                   as={Link}
@@ -120,7 +120,7 @@ export const Header = () => {
                   href={'mailto:me@gabrielhicks.dev'}
                   icon={<EmailIcon />}
                 >
-                  <a>Email</a>
+                  Email
                 </MenuItem>
               </MenuGroup>
             </MenuList>
