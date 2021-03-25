@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-// import Image from 'next/image';
 import { parseISO, format } from 'date-fns';
 import { Box } from '@chakra-ui/react';
 
@@ -10,14 +9,16 @@ import { Footer } from '../components/Footer';
 import BlogSeo from '../components/BlogSeo';
 import { BlogAvatar } from '../components/mdx/BlogAvatar';
 
+type ReadingTime = {
+  text: string;
+  minutes: number;
+  time: number;
+  words: number;
+};
+
 type BlogMatter = {
   wordCount: number;
-  readingTime: {
-    text: string;
-    minutes: number;
-    time: number;
-    words: number;
-  };
+  readingTime: ReadingTime;
   slug: string;
   title: string;
   publishedAt: string;
@@ -30,14 +31,14 @@ interface LayoutProps {
   frontMatter: BlogMatter;
 }
 
-export default function BlogLayout({ children, frontMatter }: LayoutProps) {
+const BlogLayout = ({ children, frontMatter }: LayoutProps) => {
   return (
     <Container
-      title={`${frontMatter.title} – Gabriel Hicks`}
+      type="article"
       description={frontMatter.summary}
+      title={`${frontMatter.title} – Gabriel Hicks`}
       image={`https://gabrielhicks.dev${frontMatter.image}`}
       date={new Date(frontMatter.publishedAt).toISOString()}
-      type="article"
     >
       <BlogSeo
         url={`https://gabrielhicks.dev/blog/${frontMatter.slug}`}
@@ -84,4 +85,6 @@ export default function BlogLayout({ children, frontMatter }: LayoutProps) {
       <Footer />
     </Container>
   );
-}
+};
+
+export default BlogLayout;

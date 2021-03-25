@@ -7,6 +7,11 @@ import { Header } from './Header';
 
 type Props = {
   children: ReactNode;
+  type: string;
+  description: string;
+  title: string;
+  image: string;
+  date: string;
 };
 
 export const Container = (props: Props) => {
@@ -16,15 +21,13 @@ export const Container = (props: Props) => {
 
   const color = { light: 'black', dark: 'white' };
 
-  const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
     title: 'Gabriel Hicks - Software Engineer, Full Stack Developer',
     description:
       'Gabriel Hicks is a software engineer who specializes in building applications and websites using the latest technologies.',
     image: 'https://gabrielhicks.dev/og.png',
-    type: 'website',
-    ...customMeta
+    type: 'website'
   };
 
   return (
