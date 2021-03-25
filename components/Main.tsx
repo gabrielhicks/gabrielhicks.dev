@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { SimpleGrid } from '@chakra-ui/react';
 
-export const Main = (props) => <SimpleGrid {...props} />;
+type Props = {
+  children: ReactNode;
+};
+
+export const Main = (props: Props) => <SimpleGrid {...props} />;

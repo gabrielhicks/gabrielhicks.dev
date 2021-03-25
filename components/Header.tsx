@@ -9,7 +9,7 @@ import {
   IconButton,
   Button,
   Stack,
-  ChakraLink as Link,
+  Link,
   MenuDivider,
   MenuGroup
 } from '@chakra-ui/react';
@@ -70,62 +70,57 @@ export const Header = () => {
             <MenuList color={menuToggle}>
               <MenuGroup title="Social">
                 <MenuItem
-                  component={Link}
-                  as="a"
-                  alt="Opens in a new window"
+                  as={Link}
+                  alt="Opens LinkedIn in a new window"
                   target="_blank"
                   rel="noreferrer"
                   href={'https://www.linkedin.com/in/gabrieljhicks/'}
                   icon={<ExternalLinkIcon />}
                 >
-                  LinkedIn
+                  <a>LinkedIn</a>
                 </MenuItem>
                 <MenuItem
-                  component={Link}
-                  as="a"
-                  alt="Opens in a new window"
+                  as={Link}
+                  alt="Opens GitHub in a new window"
                   target="_blank"
                   rel="noreferrer"
                   href={'https://github.com/gabrielhicks/'}
                   icon={<ExternalLinkIcon />}
                 >
-                  GitHub
+                  <a>GitHub</a>
                 </MenuItem>
                 <MenuItem
-                  component={Link}
-                  as="a"
-                  alt="Opens in a new window"
+                  as={Link}
+                  alt="Opens Twitter in a new window"
                   target="_blank"
                   rel="noreferrer"
                   href={'https://twitter.com/gabrielhicksdev'}
                   icon={<ExternalLinkIcon />}
                 >
-                  Twitter
+                  <a>Twitter</a>
                 </MenuItem>
               </MenuGroup>
               <MenuDivider />
               <MenuGroup title="Contact">
                 <MenuItem
-                  component={Link}
-                  as="a"
-                  alt="Opens in a new window"
+                  as={Link}
+                  alt="Opens Resume in a new window"
                   target="_blank"
                   rel="noreferrer"
                   href={'https://gabrielhicks.dev/HicksResume.pdf'}
                   icon={<ExternalLinkIcon />}
                 >
-                  Resume
+                  <a>Resume</a>
                 </MenuItem>
                 <MenuItem
-                  component={Link}
-                  as="a"
-                  alt="Opens in a new window"
+                  as={Link}
+                  alt="Opens Email in a new window"
                   target="_blank"
                   rel="noreferrer"
                   href={'mailto:me@gabrielhicks.dev'}
                   icon={<EmailIcon />}
                 >
-                  Email
+                  <a>Email</a>
                 </MenuItem>
               </MenuGroup>
             </MenuList>
