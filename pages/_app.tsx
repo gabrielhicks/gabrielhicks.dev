@@ -36,7 +36,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <ChakraProvider resetCSS theme={theme}>
       <ColorModeProvider
         options={{
-          useSystemColorMode: false
+          useSystemColorMode: true
         }}
       >
         <GlobalStyle>
