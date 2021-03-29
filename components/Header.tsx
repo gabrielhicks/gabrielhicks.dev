@@ -36,6 +36,8 @@ export const Header = () => {
         zIndex="10"
         width="100%"
         position="fixed"
+        alignItems="left"
+        justifyContent="center"
         style={{
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)'
@@ -43,11 +45,12 @@ export const Header = () => {
       >
         <Stack
           direction="row"
-          position="fixed"
-          top="1rem"
-          left="1rem"
+          // position="fixed"
+          // top="1rem"
+          // left="1rem"
+          p={4}
           spacing={1}
-          align="center"
+          // align="center"
         >
           <NextLink href="/" passHref>
             <Button variant="outline" colorScheme="green">
