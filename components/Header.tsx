@@ -43,15 +43,7 @@ export const Header = () => {
           WebkitBackdropFilter: 'blur(20px)'
         }}
       >
-        <Stack
-          direction="row"
-          // position="fixed"
-          // top="1rem"
-          // left="1rem"
-          p={4}
-          spacing={1}
-          // align="center"
-        >
+        <Stack direction="row" p={4} spacing={1}>
           <NextLink href="/" passHref>
             <Button variant="outline" colorScheme="green">
               Home
