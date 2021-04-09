@@ -7,6 +7,25 @@ export const ProjectContainer = () => {
   return (
     <>
       <Project
+        title="Crypto Punk Search"
+        image="/static/projects/crypto.jpg"
+        repo={false}
+        description="A searchable Crypto Punk database"
+        tech={[
+          'React',
+          'TypeScript',
+          'Chakra-UI',
+          'Node',
+          'Express',
+          'HTML',
+          'CSS'
+        ]}
+        frontend="https://github.com/gabrielhicks/cryptoPunkSearch"
+        backend="https://github.com/gabrielhicks/cryptoPunksAPI"
+        video={false}
+        website="https://cryptopunk.vercel.app/"
+      />
+      <Project
         title="Jungle to Jungle"
         image="/static/projects/jungletojungle.jpg"
         repo="https://github.com/gabrielhicks/next-sanity-ecommerce"
@@ -74,7 +93,7 @@ export const ProjectContainer = () => {
       <Project
         title="Synthwave"
         image="/static/projects/synthwave.jpg"
-        website="https://synthwavejs.herokuapp.com/"
+        website={false}
         video="https://youtu.be/HsbjB8s-tSU"
         frontend="https://github.com/gabrielhicks/synthwave-frontend"
         backend="https://github.com/gabrielhicks/synthwaveheroku"
@@ -108,7 +127,7 @@ export const ProjectContainer = () => {
           'BCrypt',
           'Sqlite3'
         ]}
-        website="https://you-play-heroku.herokuapp.com/"
+        website={false}
       />
       <Project
         title="Literally Just Vibing"
@@ -121,7 +140,6 @@ export const ProjectContainer = () => {
         description="A Ruby CLI application that generates playlists based off a users mood via Spotify API and data analysis by Michael Nuzzolo"
         tech={['Ruby', 'Spotify API']}
       />
-
       <Project
         frontend={false}
         backend={false}
@@ -144,7 +162,6 @@ export const ProjectContainer = () => {
         tech={['NextJS', 'React', 'Node', 'HTML', 'CSS', 'Open Source']}
         website="https://the-sylar-project-6avzk.ondigitalocean.app/"
       />
-
       <Project
         frontend={false}
         backend={false}
@@ -167,7 +184,6 @@ export const ProjectContainer = () => {
         tech={['HTML', 'Open Source']}
         website="https://wildaid.github.io/"
       />
-
       <Project
         frontend={false}
         backend={false}
@@ -178,13 +194,13 @@ export const ProjectContainer = () => {
         description="This is the current state of my portfolio. It serves as my sandbox where I can try out and implement new technologies."
         tech={[
           'React',
+          'TypeScript',
           'Next.js',
           'Chakra-UI',
           'MDX',
           'Prism.js',
           'HTML',
           'CSS',
-          'emotion',
           'rehype',
           'Google Analytics'
         ]}
