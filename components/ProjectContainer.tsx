@@ -10,7 +10,7 @@ export const ProjectContainer = () => {
         title="Crypto Punk Search"
         image="/static/projects/crypto.jpg"
         repo={false}
-        description="A searchable Crypto Punk database"
+        description="A searchable Crypto Punk database. There are 10,000 Crypto Punk NFTs ranging from 000-9999. Made by Larva Labs"
         tech={[
           'React',
           'TypeScript',
